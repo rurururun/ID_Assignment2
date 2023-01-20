@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+.flexcontainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    background-color: lightcyan;
+    border: solid lightskyblue;
+    border-width: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#submit{
+    background-color: lightblue;
+    border-color: lightskyblue;
+    border-width: 10px;
+    border-radius: 10px;
+}

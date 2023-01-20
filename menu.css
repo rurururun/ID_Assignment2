@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+.flexcontainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    background-color: lightcyan;
+    border: solid lightskyblue;
+    border-width: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.menu > button{
+    background-color: lightblue;
+    border-color: lightskyblue;
+    border-width: 10px;
+    border-radius: 10px;
+}
