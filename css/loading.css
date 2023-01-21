@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    background-color:cornflowerblue;
+}
+
+.flexcontainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-text{
+    color: white;
+    font: italic;
+}

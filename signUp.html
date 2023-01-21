@@ -9,17 +9,24 @@
 </head>
 <body>
     <div class="flexcontainer">
-        <form class="form">
-            <label>Name:</label><br/>
-            <input type="text" placeholder="Name" id="username"/><br/>
-            <label>Password:</label><br/>
-            <input type="password" placeholder="Password" id="password"/><br/>
-            <label>Country:</label><br/>
-            <input type="text" placeholder="Country" id="country"/><br/>
+        <div class="form">
+            <div id="name">
+                <label>Name:</label><br/>
+                <input type="text" placeholder="Name" id="username" required/>
+            </div><br/>
+            <div id="pass">
+                <label>Password:</label><br/>
+                <input type="password" placeholder="Password" id="password" required/>
+            </div><br/>
+            <div id="ctry">
+                <label>Country:</label><br/>
+                <input type="text" placeholder="Country" id="country" required/>
+            </div><br/>
             <input type="submit" value="Submit" id="submit"/>
-        </form>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="\js\signUpForm.js"></script>
 </body>
 </html>

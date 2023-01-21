@@ -25,6 +25,10 @@ body{
     border-radius: 20px;
 }
 
+p{
+    margin: 0;
+}
+
 #submit{
     background-color: lightblue;
     border-color: lightskyblue;
