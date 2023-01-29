@@ -5,7 +5,8 @@ import { getInputDirection } from "./input.js";
 
 let username = localStorage.getItem("username").split('"')[1];
 const APIKEY = "63d372573bc6b255ed0c4352";
-let lastRenderTime = 0;
+let lastRenderTime1 = 0;
+let lastRenderTime2 = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('board');
 let speed = 4;
@@ -58,13 +59,12 @@ function main(currentTime){
 
         window.requestAnimationFrame(main);
 
-        // limits the refresh rate of the game, higher speed means higher refresh rate
-        const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
+        const secondsSinceLastRender = (currentTime - lastRenderTime1) / 1000;
         if (secondsSinceLastRender < 1 / speed){
             return;
         }
 
-        lastRenderTime = currentTime;
+        lastRenderTime1 = currentTime;
         updateGame();
         drawGame();
     }
@@ -74,13 +74,27 @@ function main(currentTime){
     }
 }
 
+function hunter(currentTime){
+    window.requestAnimationFrame(hunter);
+    inputDirection = getInputDirection();
+    if (inputDirection.x != 0 || inputDirection.y != 0){
+        const secondsSinceLastRender = (currentTime - lastRenderTime2) / 1000;
+        if (secondsSinceLastRender < 1 / hunterSpeed){
+            return;
+        }
+    
+        lastRenderTime2 = currentTime;
+        updateHunter();
+    }
+}
+
 // starts the loop
 window.requestAnimationFrame(main);
+window.requestAnimationFrame(hunter);
 
 function updateGame(){
     updateSnake();
     updateFood();
-    updateHunter();
     checkDeath();
 }
 
