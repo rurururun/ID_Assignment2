@@ -29,3 +29,8 @@ body{
     background-color: red;
     border: .25vmin solid black;
 }
+
+.hunter{
+    background-color: black;
+    border: .25vmin solid blue;
+}
