@@ -1,7 +1,7 @@
 import { onFood, onSnake, expandSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
 
-let food = getRandomFoodPosition();
+export let food = getRandomFoodPosition();
 
 const eat = 1;
 export let score = 0;

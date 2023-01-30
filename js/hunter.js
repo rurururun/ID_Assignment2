@@ -77,3 +77,7 @@ export function drawHunter(gameBoard){
 export function getHunter(){
     return hunter;
 }
+
+export function changeHunterSpeed(newSpeed){
+    hunterSpeed = newSpeed;
+}

@@ -18,6 +18,7 @@ body{
     display: grid;
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
+    border: 10px solid black;
 }
 
 .snake{
@@ -33,4 +34,22 @@ body{
 .hunter{
     background-color: black;
     border: .25vmin solid blue;
+}
+
+.banana{
+    background-color: yellow;
+    border: .25vmin solid black;
+}
+
+.orange{
+    background-color: orange;
+    border: .25vmin solid black;
+}
+
+.path{
+    background-color: gray;
+}
+
+.checkered{
+    background-color: greenyellow;
 }
