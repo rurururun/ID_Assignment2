@@ -35,7 +35,7 @@ function main(currentTime){
             // adapted from restdb api
             let jsondata = {
                 "username": username,
-                "score": score
+                "score": score + (bananaCount * 10) + (orangeCount * 10)
             };
 
             // create AJAX settings
