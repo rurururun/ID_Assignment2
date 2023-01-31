@@ -1,9 +1,10 @@
-import { updateSnake, drawSnake, snakeIntersection, onSnake } from "./snake.js";
+import { updateSnake, drawSnake, snakeIntersection, onSnake, getSnakeLength } from "./snake.js";
 import { updateFood, drawFood, score, food } from "./food.js";
 import { updateHunter, drawHunter, getHunter, hunterSpeed, changeHunterSpeed } from "./hunter.js";
 import { getInputDirection } from "./input.js";
 import { updateBanana, drawBanana, generateBanana, useBanana, updateBananaStatus, getBananaStatus } from "./banana.js";
 import { updateOrange, drawOrange, generateOrange, useOrange, updateOrangeStatus,getOrangeStatus } from "./orange.js";
+import { gamePaused } from "./options.js";
 
 let username = localStorage.getItem("username").split('"')[1];
 const APIKEY = "63d372573bc6b255ed0c4352";
@@ -24,11 +25,12 @@ let bananaUsed = false;
 let orangeUsed = false;
 let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
+
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
     inputDirection = getInputDirection();
     // check if the player has moved, once the player moves then the game will start
-    if (inputDirection.x != 0 || inputDirection.y != 0){
+    if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
         // check if game is over
         if (gameOver){
             // make a object to store the data to be inserted into the database
@@ -57,7 +59,7 @@ function main(currentTime){
             $.ajax(settings).done(function (){
                 // prompt the player the score they got and ask whether they want to play again or stop playing
                 if (confirm(
-                    'You have died. Your score was ' + score +
+                    'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
                     '. Press ok if you want to play again or press cancel if you want to stop.'
                 )){
                     window.location = "endless.html";
@@ -79,10 +81,15 @@ function main(currentTime){
         lastRenderTime1 = currentTime;
         updateGame();
         drawGame();
+        document.querySelector('#score').innerHTML = `Score: ` + score;
+        document.querySelector('#length').innerHTML = `Snake Length: ` + getSnakeLength();
+        document.querySelector('#banana').innerHTML = `Banana: ` + bananaCount;
+        document.querySelector('#orange').innerHTML = `Orange: ` + orangeCount;
     }
     else{
         window.requestAnimationFrame(main);
         drawGame();
+        lastRenderTime1 = currentTime;
     }
 }
 
@@ -90,7 +97,7 @@ function main(currentTime){
 function hunter(currentTime){
     window.requestAnimationFrame(hunter);
     inputDirection = getInputDirection();
-    if (inputDirection.x != 0 || inputDirection.y != 0){
+    if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime2) / 1000;
         if (secondsSinceLastRender < 1 / hunterSpeed){
             return;
@@ -99,16 +106,33 @@ function hunter(currentTime){
         lastRenderTime2 = currentTime;
         updateHunter();
     }
+    else{
+        lastRenderTime2 = currentTime;
+    }
 }
 
-// Constant Loop (Real-Time) for boost
+let s1 = 0;
+let s2 = 0;
+let s3 = 0;
+let gameWasPaused = false;
+
+// Constant Loop (Real-Time) for power ups 
 function powerUps(currentTime){
     window.requestAnimationFrame(powerUps);
     inputDirection = getInputDirection();
-    if ((inputDirection.x != 0 || inputDirection.y != 0) && powerUpStatus){
+    if ((inputDirection.x != 0 || inputDirection.y != 0) && powerUpStatus && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime3) / 1000;
-        if (secondsSinceLastRender < 20){
-            return;
+        if (gameWasPaused){
+            if (secondsSinceLastRender < 20 - s1){
+                return;
+            }
+            gameWasPaused = false;
+        }
+        else{
+            s1 = secondsSinceLastRender;
+            if (secondsSinceLastRender < 20){
+                return;
+            }
         }
 
         lastRenderTime3 = currentTime;
@@ -123,6 +147,10 @@ function powerUps(currentTime){
             }
         }
     }
+    else if (gamePaused){
+        gameWasPaused = true;
+        lastRenderTime3 = currentTime;
+    }
     else{
         lastRenderTime3 = currentTime;
     }
@@ -130,16 +158,29 @@ function powerUps(currentTime){
 
 function usingBanana(currentTime){
     window.requestAnimationFrame(usingBanana);
-    if (bananaUsed){
+    if (bananaUsed && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime4) / 1000;
-        if (secondsSinceLastRender < 5){
-            return;
+        if (gameWasPaused){
+            if (secondsSinceLastRender < 5 - s2){
+                return;
+            }
+            gameWasPaused = false;
+        }
+        else{
+            s2 = secondsSinceLastRender;
+            if (secondsSinceLastRender < 5){
+                return;
+            }
         }
 
         lastRenderTime4 = currentTime;
         bananaUsed = false;
         snakeSpeed -= snakeSpeedIncrement;
         updateBananaStatus();
+    }
+    else if (gamePaused){
+        gameWasPaused = true;
+        lastRenderTime4 = currentTime;
     }
     else{
         lastRenderTime4 = currentTime;
@@ -148,16 +189,29 @@ function usingBanana(currentTime){
 
 function usingOrange(currentTime){
     window.requestAnimationFrame(usingOrange);
-    if (orangeUsed){
+    if (orangeUsed && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime5) / 1000;
-        if (secondsSinceLastRender < 5){
-            return;
+        if (gameWasPaused){
+            if (secondsSinceLastRender < 5 - s3){
+                return;
+            }
+            gameWasPaused = false;
+        }
+        else{
+            s3 = secondsSinceLastRender;
+            if (secondsSinceLastRender < 5){
+                return;
+            }
         }
 
         lastRenderTime5 = currentTime;
         orangeUsed = false;
         changeHunterSpeed(hunterSpeed + hunterSpeedDecrement);
         updateOrangeStatus();
+    }
+    else if (gamePaused){
+        gameWasPaused = true;
+        lastRenderTime5 = currentTime;
     }
     else{
         lastRenderTime5 = currentTime;

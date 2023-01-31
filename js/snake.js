@@ -140,3 +140,7 @@ function addSegments(){
     newSegments = 0;
 }
 
+export function getSnakeLength(){
+    return snake.length;
+}
+

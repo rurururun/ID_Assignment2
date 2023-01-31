@@ -6,19 +6,20 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: lightblue;
 }
 
 #board{
     background-color: lightgreen;
-    width: 90vmin;
-    height: 90vmin;
+    width: 97vw;
+    height: 97vh;
     display: grid;
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
     border: 10px solid black;
+    border-radius: 20px;
 }
 
 .snake{
@@ -52,4 +53,50 @@ body{
 
 .checkered{
     background-color: greenyellow;
+}
+
+#leftSide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#leftSide > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightblue;
+    border: 10px solid lightskyblue;
+    border-radius: 20px;
+}
+
+#leftSide > div > div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#pause{
+    background-color: lightgreen;
+    border-color: green;
+    border-radius: 10px;
+    border-width: 10px;
+}
+
+#resume{
+    background-color: lightskyblue;
+    border-color: blue;
+    border-radius: 10px;
+    border-width: 10px;
+}
+
+#exit{
+    background-color: rgb(250, 84, 84);
+    border-color: darkred;
+    border-radius: 10px;
+    border-width: 10px;
 }
