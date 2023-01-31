@@ -83,8 +83,8 @@ function main(currentTime){
         drawGame();
         document.querySelector('#score').innerHTML = `Score: ` + score;
         document.querySelector('#length').innerHTML = `Snake Length: ` + getSnakeLength();
-        document.querySelector('#banana').innerHTML = `Banana: ` + bananaCount;
-        document.querySelector('#orange').innerHTML = `Orange: ` + orangeCount;
+        document.querySelector('#banana').innerHTML = `Banana: ` + bananaCount + `<br/>(Press Q to use)`;
+        document.querySelector('#orange').innerHTML = `Orange: ` + orangeCount + `<br/>(Press E to use)`;
     }
     else{
         window.requestAnimationFrame(main);
