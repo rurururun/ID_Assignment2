@@ -18,7 +18,7 @@ window.addEventListener('keyup', e => {
             }
             break;
         case 'Escape':
-            window.location = "modeMenu.html";
+            window.history.back();
             break;
     }
 })

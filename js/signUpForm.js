@@ -115,6 +115,10 @@ $(document).ready(function () {
 
             // [STEP 6]: Send the AJAX request over to restdb
             $.ajax(settings).done(function (){
+                // encodedUsername = encodeURIComponent(username);
+                // encodedPassword = encodeURIComponent(password);
+                // document.cookie = "username=" + encodedUsername + ";";
+                // document.cookie = "password=" + encodedPassword + ";";
                 localStorage.setItem("username", JSON.stringify(username));
                 localStorage.setItem("password", JSON.stringify(password));
                 window.location = "loadingScreen.html";
