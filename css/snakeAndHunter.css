@@ -16,8 +16,8 @@ body{
     width: 97vw;
     height: 97vh;
     display: grid;
-    grid-template-rows: repeat(21, 1fr);
-    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(31, 1fr);
+    grid-template-columns: repeat(31, 1fr);
     border: 10px solid black;
     border-radius: 20px;
 }
@@ -25,6 +25,23 @@ body{
 .snake{
     background-color: purple;
     border: .25vmin solid black;
+}
+
+#snake-head{
+    background-color: purple;
+    border: .25vmin solid black;
+}
+
+.snake-head-up{
+    border: none;
+}
+
+.snake-body{
+    background-color: purple;
+}
+
+#snake-tail{
+    background-color: purple;
 }
 
 .food{
@@ -47,7 +64,19 @@ body{
     border: .25vmin solid black;
 }
 
-.path{
+.path-vertical{
+    background-color: gray;
+    border-left: .25vmin solid black;
+    border-right: .25vmin solid black;
+}
+
+.path-horizontal{
+    background-color: gray;
+    border-top: .25vmin solid black;
+    border-bottom: .25vmin solid black;
+}
+
+.path-center{
     background-color: gray;
 }
 

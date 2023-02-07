@@ -1,4 +1,4 @@
-const gridSize = 21;
+const gridSize = 31;
 
 // generate a random coordinate on the board and returns it
 export function randomGridPosition(){

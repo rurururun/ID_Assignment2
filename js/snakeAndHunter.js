@@ -15,7 +15,7 @@ let lastRenderTime4 = 0;
 let lastRenderTime5 = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('board');
-let snakeSpeed = 4;
+let snakeSpeed = 10;
 let inputDirection = getInputDirection();
 let bananaCount = 0;
 let orangeCount = 0;
@@ -62,10 +62,10 @@ function main(currentTime){
                     'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
                     '. Press ok if you want to play again or press cancel if you want to stop.'
                 )){
-                    window.location = "endless.html";
+                    window.location = "snakeAndHunter.html";
                 }
                 else{
-                    window.location = "modeMenu.html";
+                    window.history.back();
                 }
             })
             return;
@@ -273,28 +273,37 @@ function checkDeath(){
 }
 
 function drawPath(){
-    for (let i = 1; i <= 21; i++){
-        let newDiv = document.createElement("div");
-        newDiv.style.gridRowStart = i;
-        newDiv.style.gridColumnStart = 11;
-        newDiv.classList.add('path');
-        gameBoard.appendChild(newDiv);
-    }
-    for (let i = 1; i <= 21; i++){
-        if (i != 11){
+    for (let i = 1; i <= 31; i++){
+        if (i == 16){
             let newDiv = document.createElement("div");
-            newDiv.style.gridRowStart = 11;
+            newDiv.style.gridRowStart = i;
+            newDiv.style.gridColumnStart = 16;
+            newDiv.classList.add('path-center');
+            gameBoard.appendChild(newDiv);
+        }
+        else{
+            let newDiv = document.createElement("div");
+            newDiv.style.gridRowStart = i;
+            newDiv.style.gridColumnStart = 16;
+            newDiv.classList.add('path-vertical');
+            gameBoard.appendChild(newDiv);
+        }
+    }
+    for (let i = 1; i <= 31; i++){
+        if (i != 16){
+            let newDiv = document.createElement("div");
+            newDiv.style.gridRowStart = 16;
             newDiv.style.gridColumnStart = i;
-            newDiv.classList.add('path');
+            newDiv.classList.add('path-horizontal');
             gameBoard.appendChild(newDiv);
         }
     }
 }
 
 function drawCheckered(){
-    for (let a = 1; a <= 21; a++){
+    for (let a = 1; a <= 31; a++){
         if (a % 2 != 0){
-            for (let b = 1; b <= 21; b++){
+            for (let b = 1; b <= 31; b++){
                 if (b % 2 == 0){
                     let newDiv = document.createElement("div");
                     newDiv.style.gridRowStart = a;
@@ -305,7 +314,7 @@ function drawCheckered(){
             }
         }
         else{
-            for (let b = 1; b <= 21; b++){
+            for (let b = 1; b <= 31; b++){
                 if (b % 2 != 0){
                     let newDiv = document.createElement("div");
                     newDiv.style.gridRowStart = a;

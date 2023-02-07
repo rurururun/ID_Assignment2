@@ -1,5 +1,5 @@
 function play(){
-    window.location = "modeMenu.html";
+    window.location = "snakeAndHunter.html";
 }
 
 function leaderBoard(){

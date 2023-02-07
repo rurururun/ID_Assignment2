@@ -1,19 +1,19 @@
 let hunter = {
-    x: 11,
+    x: 16,
     y: 1
 }
 
 let direction = null;
 
 let checkPoints = [
-    { x: 11, y: 1, path: "down" }, // up
-    { x: 11, y: 11, path: "" }, // center
-    { x: 1, y: 11, path: "right" }, // left
-    { x: 11, y: 21, path: "up" },  // down
-    { x: 21, y: 11, path: "left" } // right
+    { x: 16, y: 1, path: "down" }, // up
+    { x: 16, y: 16, path: "" }, // center
+    { x: 1, y: 16, path: "right" }, // left
+    { x: 16, y: 31, path: "up" },  // down
+    { x: 31, y: 16, path: "left" } // right
 ]
 
-export let hunterSpeed = 2;
+export let hunterSpeed = 5;
 
 export function updateHunter(){
     // check if the hunter has reached the designated points on the board

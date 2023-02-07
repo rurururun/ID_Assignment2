@@ -1,3 +1,5 @@
+import { gamePaused } from "./options.js";
+
 let inputDirection = {
     x: 0,
     y: 0
@@ -12,6 +14,9 @@ let lastInputDirection = {
 window.addEventListener('keydown', e => {
     switch (e.key){
         case 'ArrowUp':
+            if (gamePaused){
+                break;
+            }
             if (lastInputDirection.y != 0){
                 break;
             }
@@ -21,6 +26,9 @@ window.addEventListener('keydown', e => {
             }
             break;
         case 'ArrowDown':
+            if (gamePaused){
+                break;
+            }
             if (lastInputDirection.y != 0){
                 break;
             }
@@ -30,6 +38,9 @@ window.addEventListener('keydown', e => {
             }
             break;
         case 'ArrowLeft':
+            if (gamePaused){
+                break;
+            }
             if (lastInputDirection.x != 0){
                 break;
             }
@@ -39,6 +50,9 @@ window.addEventListener('keydown', e => {
             }
             break;
         case 'ArrowRight':
+            if (gamePaused){
+                break;
+            }
             if (lastInputDirection.x != 0){
                 break;
             }
