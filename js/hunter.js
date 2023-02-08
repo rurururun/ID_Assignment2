@@ -70,6 +70,11 @@ export function drawHunter(gameBoard){
     // assign a class to the hunter for css
     hunterBody.classList.add('hunter');
 
+    hunterBody.style.borderTopRightRadius = "20px";
+    hunterBody.style.borderTopLeftRadius = "20px";
+    hunterBody.style.borderBottomLeftRadius = "20px";
+    hunterBody.style.borderBottomRightRadius = "20px";
+
     // append the hunter into the game board for it to be shown
     gameBoard.appendChild(hunterBody);
 }

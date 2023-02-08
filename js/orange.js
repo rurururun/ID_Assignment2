@@ -20,6 +20,10 @@ export function drawOrange(gameBoard){
         orangeElement.style.gridRowStart = orange.y;
         orangeElement.style.gridColumnStart = orange.x;
         orangeElement.classList.add('orange');
+        orangeElement.style.borderTopRightRadius = "20px";
+        orangeElement.style.borderTopLeftRadius = "20px";
+        orangeElement.style.borderBottomRightRadius = "20px";
+        orangeElement.style.borderBottomLeftRadius = "20px";
         gameBoard.appendChild(orangeElement);
     }
 }

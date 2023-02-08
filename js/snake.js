@@ -89,41 +89,31 @@ export function drawSnake(gameBoard){
             snakeHead.style.gridRowStart = snake[i].y;
             snakeHead.style.gridColumnStart = snake[i].x;
 
-            if (inputDirection.y == -1){
-                snakeHead.style.backgroundColor = "purple";
-                snakeHead.style.borderLeft = ".25vmin solid black";
-                snakeHead.style.borderRight = ".25vmin solid black";
-                snakeHead.style.borderTop = ".25vmin solid black";
-                snakeHead.style.borderTopLeftRadius = "20px";
+            snakeHead.classList.add("snake-head");
+
+            if (snake.length == 1){
                 snakeHead.style.borderTopRightRadius = "20px";
-            }
-            else if (inputDirection.y == 1){
-                snakeHead.style.backgroundColor = "purple";
-                snakeHead.style.borderLeft = ".25vmin solid black";
-                snakeHead.style.borderRight = ".25vmin solid black";
-                snakeHead.style.borderBottom = ".25vmin solid black";
-                snakeHead.style.borderBottomLeftRadius = "20px";
-                snakeHead.style.borderBottomRightRadius = "20px";
-            }
-            else if (inputDirection.x == -1){
-                snakeHead.style.backgroundColor = "purple";
-                snakeHead.style.borderLeft = ".25vmin solid black";
-                snakeHead.style.borderBottom = ".25vmin solid black";
-                snakeHead.style.borderTop = ".25vmin solid black";
                 snakeHead.style.borderTopLeftRadius = "20px";
                 snakeHead.style.borderBottomLeftRadius = "20px";
-            }
-            else if (inputDirection.x == 1){
-                snakeHead.style.backgroundColor = "purple";
-                snakeHead.style.borderBottom = ".25vmin solid black";
-                snakeHead.style.borderRight = ".25vmin solid black";
-                snakeHead.style.borderTop = ".25vmin solid black";
-                snakeHead.style.borderTopRightRadius = "20px";
                 snakeHead.style.borderBottomRightRadius = "20px";
             }
             else{
-                snakeHead.style.backgroundColor = "purple";
-                snakeHead.style.border = ".25vmin solid black";
+                if (inputDirection.y == -1){
+                    snakeHead.style.borderTopLeftRadius = "20px";
+                    snakeHead.style.borderTopRightRadius = "20px";
+                }
+                else if (inputDirection.y == 1){
+                    snakeHead.style.borderBottomLeftRadius = "20px";
+                    snakeHead.style.borderBottomRightRadius = "20px";
+                }
+                else if (inputDirection.x == -1){
+                    snakeHead.style.borderTopLeftRadius = "20px";
+                    snakeHead.style.borderBottomLeftRadius = "20px";
+                }
+                else if (inputDirection.x == 1){
+                    snakeHead.style.borderTopRightRadius = "20px";
+                    snakeHead.style.borderBottomRightRadius = "20px";
+                }
             }
 
             // append each snake body into the game board for it to be shown
@@ -137,38 +127,29 @@ export function drawSnake(gameBoard){
             snakeTail.style.gridRowStart = snake[i].y;
             snakeTail.style.gridColumnStart = snake[i].x;
 
+            if (i % 2 != 0){
+                snakeTail.classList.add("snake-stripe");
+            }
+            else{
+                snakeTail.classList.add("snake");
+            }
+
             if (snake.length > 2){
                 if (turningpoint.length != 0){
                     if (snake[i].x == turningpoint[0].x && snake[i].y == turningpoint[0].y){
                         if (afterTurningDirection[0] == "up"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
                             snakeTail.style.borderBottomLeftRadius = "20px";
                             snakeTail.style.borderBottomRightRadius = "20px";
                         }
                         else if (afterTurningDirection[0] == "down"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderTop = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
                             snakeTail.style.borderTopLeftRadius = "20px";
                             snakeTail.style.borderTopRightRadius = "20px";
                         }
                         else if (afterTurningDirection[0] == "left"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
-                            snakeTail.style.borderTop = ".25vmin solid black";
                             snakeTail.style.borderBottomRightRadius = "20px";
                             snakeTail.style.borderTopRightRadius = "20px";
                         }
                         else if (afterTurningDirection[0] == "right"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderTop = ".25vmin solid black";
                             snakeTail.style.borderBottomLeftRadius = "20px";
                             snakeTail.style.borderTopLeftRadius = "20px";
                         }
@@ -195,34 +176,18 @@ export function drawSnake(gameBoard){
                     }
                     else{
                         if (beforeTurningDirection[0] == "up"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
                             snakeTail.style.borderBottomLeftRadius = "20px";
                             snakeTail.style.borderBottomRightRadius = "20px";
                         }
                         else if (beforeTurningDirection[0] == "down"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderTop = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
                             snakeTail.style.borderTopLeftRadius = "20px";
                             snakeTail.style.borderTopRightRadius = "20px";
                         }
                         else if (beforeTurningDirection[0] == "left"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderRight = ".25vmin solid black";
-                            snakeTail.style.borderTop = ".25vmin solid black";
                             snakeTail.style.borderBottomRightRadius = "20px";
                             snakeTail.style.borderTopRightRadius = "20px";
                         }
                         else if (beforeTurningDirection[0] == "right"){
-                            snakeTail.style.backgroundColor = "purple";
-                            snakeTail.style.borderBottom = ".25vmin solid black";
-                            snakeTail.style.borderLeft = ".25vmin solid black";
-                            snakeTail.style.borderTop = ".25vmin solid black";
                             snakeTail.style.borderBottomLeftRadius = "20px";
                             snakeTail.style.borderTopLeftRadius = "20px";
                         }
@@ -230,34 +195,18 @@ export function drawSnake(gameBoard){
                 }
                 else{
                     if (inputDirection.y == -1){
-                        snakeTail.style.backgroundColor = "purple";
-                        snakeTail.style.borderLeft = ".25vmin solid black";
-                        snakeTail.style.borderRight = ".25vmin solid black";
-                        snakeTail.style.borderBottom = ".25vmin solid black";
                         snakeTail.style.borderBottomLeftRadius = "20px";
                         snakeTail.style.borderBottomRightRadius = "20px";
                     }
                     else if (inputDirection.y == 1){
-                        snakeTail.style.backgroundColor = "purple";
-                        snakeTail.style.borderLeft = ".25vmin solid black";
-                        snakeTail.style.borderRight = ".25vmin solid black";
-                        snakeTail.style.borderTop = ".25vmin solid black";
                         snakeTail.style.borderTopLeftRadius = "20px";
                         snakeTail.style.borderTopRightRadius = "20px";
                     }
                     else if (inputDirection.x == -1){
-                        snakeTail.style.backgroundColor = "purple";
-                        snakeTail.style.borderTop = ".25vmin solid black";
-                        snakeTail.style.borderRight = ".25vmin solid black";
-                        snakeTail.style.borderBottom = ".25vmin solid black";
                         snakeTail.style.borderTopRightRadius = "20px";
                         snakeTail.style.borderBottomRightRadius = "20px";
                     }
                     else if (inputDirection.x == 1){
-                        snakeTail.style.backgroundColor = "purple";
-                        snakeTail.style.borderLeft = ".25vmin solid black";
-                        snakeTail.style.borderTop = ".25vmin solid black";
-                        snakeTail.style.borderBottom = ".25vmin solid black";
                         snakeTail.style.borderBottomLeftRadius = "20px";
                         snakeTail.style.borderTopLeftRadius = "20px";
                     }
@@ -265,34 +214,18 @@ export function drawSnake(gameBoard){
             }
             else{
                 if (inputDirection.y == -1){
-                    snakeTail.style.backgroundColor = "purple";
-                    snakeTail.style.borderLeft = ".25vmin solid black";
-                    snakeTail.style.borderRight = ".25vmin solid black";
-                    snakeTail.style.borderBottom = ".25vmin solid black";
                     snakeTail.style.borderBottomLeftRadius = "20px";
                     snakeTail.style.borderBottomRightRadius = "20px";
                 }
                 else if (inputDirection.y == 1){
-                    snakeTail.style.backgroundColor = "purple";
-                    snakeTail.style.borderLeft = ".25vmin solid black";
-                    snakeTail.style.borderRight = ".25vmin solid black";
-                    snakeTail.style.borderTop = ".25vmin solid black";
                     snakeTail.style.borderTopLeftRadius = "20px";
                     snakeTail.style.borderTopRightRadius = "20px";
                 }
                 else if (inputDirection.x == -1){
-                    snakeTail.style.backgroundColor = "purple";
-                    snakeTail.style.borderTop = ".25vmin solid black";
-                    snakeTail.style.borderRight = ".25vmin solid black";
-                    snakeTail.style.borderBottom = ".25vmin solid black";
                     snakeTail.style.borderTopRightRadius = "20px";
                     snakeTail.style.borderBottomRightRadius = "20px";
                 }
                 else if (inputDirection.x == 1){
-                    snakeTail.style.backgroundColor = "purple";
-                    snakeTail.style.borderLeft = ".25vmin solid black";
-                    snakeTail.style.borderTop = ".25vmin solid black";
-                    snakeTail.style.borderBottom = ".25vmin solid black";
                     snakeTail.style.borderBottomLeftRadius = "20px";
                     snakeTail.style.borderTopLeftRadius = "20px";
                 }
@@ -309,203 +242,69 @@ export function drawSnake(gameBoard){
             snakeBody.style.gridRowStart = snake[i].y;
             snakeBody.style.gridColumnStart = snake[i].x;
 
+            if (i % 2 != 0){
+                snakeBody.classList.add("snake-stripe");
+            }
+            else{
+                snakeBody.classList.add("snake");
+            }
+
             for (let a = 0; a < turningpoint.length; a++){
                 if (beforeTurningDirection[a] == "up"){
                     if (afterTurningDirection[a] == "left"){
-                        if (snake[i].y > turningpoint[a].y){ // before turning point
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){ // on turning point
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){ // on turning point
                             snakeBody.style.borderTopRightRadius = "20px";
                             break;
                         }
-                        else if (a == turningpoint.length - 1){ // after turning point
-                            if (snake[i].x < turningpoint[a].x){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderTop = ".25vmin solid black";
-                                snakeBody.style.borderBottom = ".25vmin solid black";
-                            }
-                        }
                     }
                     else if (afterTurningDirection[a] == "right"){
-                        if (snake[i].y > turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderTopLeftRadius = "20px";
                             break;
-                        }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].x > turningpoint[a].x){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderTop = ".25vmin solid black";
-                                snakeBody.style.borderBottom = ".25vmin solid black";
-                            }
                         }
                     }
                 }
                 else if (beforeTurningDirection[a] == "down"){
                     if (afterTurningDirection[a] == "left"){
-                        if (snake[i].y < turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderBottomRightRadius = "20px";
                             break;
                         }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].x < turningpoint[a].x){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderTop = ".25vmin solid black";
-                                snakeBody.style.borderBottom = ".25vmin solid black";
-                            }
-                        }
                     }
                     else if (afterTurningDirection[a] == "right"){
-                        if (snake[i].y < turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderBottomLeftRadius = "20px";
                             break;
-                        }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].x > turningpoint[a].x){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderTop = ".25vmin solid black";
-                                snakeBody.style.borderBottom = ".25vmin solid black";
-                            }
                         }
                     }
                 }
                 else if (beforeTurningDirection[a] == "left"){
                     if (afterTurningDirection[a] == "up"){
-                        if (snake[i].x > turningpoint[a].x){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderBottomLeftRadius = "20px";
                             break;
                         }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].y < turningpoint[a].y){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderLeft = ".25vmin solid black";
-                                snakeBody.style.borderRight = ".25vmin solid black";
-                            }
-                        }
                     }
                     else if (afterTurningDirection[a] == "down"){
-                        if (snake[i].x > turningpoint[a].x){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderLeft = ".25vmin solid black";
-                            snakeBody.style.borderTop = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderTopLeftRadius = "20px";
                             break;
-                        }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].y > turningpoint[a].y){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderLeft = ".25vmin solid black";
-                                snakeBody.style.borderRight = ".25vmin solid black";
-                            }
                         }
                     }
                 }
                 else if (beforeTurningDirection[a] == "right"){
                     if (afterTurningDirection[a] == "up"){
-                        if (snake[i].x < turningpoint[a].x){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderBottomRightRadius = "20px";
                             break;
                         }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].y < turningpoint[a].y){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderLeft = ".25vmin solid black";
-                                snakeBody.style.borderRight = ".25vmin solid black";
-                            }
-                        }
                     }
                     else if (afterTurningDirection[a] == "down"){
-                        if (snake[i].x < turningpoint[a].x){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderTop = ".25vmin solid black";
-                            snakeBody.style.borderBottom = ".25vmin solid black";
-                            break;
-                        }
-                        else if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
-                            snakeBody.style.backgroundColor = "purple";
-                            snakeBody.style.borderRight = ".25vmin solid black";
-                            snakeBody.style.borderTop = ".25vmin solid black";
+                        if (snake[i].x == turningpoint[a].x && snake[i].y == turningpoint[a].y){
                             snakeBody.style.borderTopRightRadius = "20px";
                             break;
                         }
-                        else if (a == turningpoint.length - 1){
-                            if (snake[i].y > turningpoint[a].y){
-                                snakeBody.style.backgroundColor = "purple";
-                                snakeBody.style.borderLeft = ".25vmin solid black";
-                                snakeBody.style.borderRight = ".25vmin solid black";
-                            }
-                        }
                     }
-                }
-            }
-
-            if (turningpoint.length == 0){
-                if (inputDirection.y == -1 || inputDirection.y == 1){
-                    snakeBody.style.backgroundColor = "purple";
-                    snakeBody.style.borderLeft = ".25vmin solid black";
-                    snakeBody.style.borderRight = ".25vmin solid black";
-                }
-                else if (inputDirection.x == -1 || inputDirection.x == 1){
-                    snakeBody.style.backgroundColor = "purple";
-                    snakeBody.style.borderTop = ".25vmin solid black";
-                    snakeBody.style.borderBottom = ".25vmin solid black";
                 }
             }
 
@@ -513,13 +312,6 @@ export function drawSnake(gameBoard){
             gameBoard.appendChild(snakeBody);
         }
     }
-
-    // if (restOfSnakeNotCaughtUp.length == 0){
-    //     lastInputDirection = inputDirection;
-    // }
-    // else{
-    //     restOfSnakeNotCaughtUp = [];
-    // }
 }
 
 export function expandSnake(amount){

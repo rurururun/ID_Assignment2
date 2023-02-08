@@ -31,6 +31,11 @@ export function drawFood(gameBoard){
     // assign a class to the food for css
     foodElement.classList.add('food');
 
+    foodElement.style.borderTopRightRadius = "20px";
+    foodElement.style.borderTopLeftRadius = "20px";
+    foodElement.style.borderBottomRightRadius = "20px";
+    foodElement.style.borderBottomLeftRadius = "20px";
+
     // append the food into the game board for it to be shown
     gameBoard.appendChild(foodElement);
 }

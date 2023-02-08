@@ -20,6 +20,10 @@ export function drawBanana(gameBoard){
         bananaElement.style.gridRowStart = banana.y;
         bananaElement.style.gridColumnStart = banana.x;
         bananaElement.classList.add('banana');
+        bananaElement.style.borderTopRightRadius = "20px";
+        bananaElement.style.borderTopLeftRadius = "20px";
+        bananaElement.style.borderBottomRightRadius = "20px";
+        bananaElement.style.borderBottomLeftRadius = "20px";
         gameBoard.appendChild(bananaElement);
     }
 }
