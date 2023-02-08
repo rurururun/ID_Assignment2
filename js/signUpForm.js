@@ -1,3 +1,17 @@
+if (localStorage.getItem("bgmTime") != null){
+    var audio = new Audio("audio/10. Boundless Slumber.wav");
+    audio.volume = 0.4;
+    audio.currentTime = parseInt(localStorage.getItem("bgmTime")) + 1;
+    audio.play();
+    audio.loop = true;
+    console.log(audio.currentTime);
+}
+
+function hover(){
+    var hoversfx = new Audio("audio/Button Hover.mp3");
+    hoversfx.play();
+}
+
 // [STEP 0]: Make sure our document is all good
 $(document).ready(function () {
     let url = "https://restcountries.com/v3.1/all";
@@ -262,6 +276,7 @@ $(document).ready(function () {
 
             // [STEP 6]: Send the AJAX request over to restdb
             $.ajax(settings).done(function (){
+                localStorage.setItem("bgmTime", JSON.stringify(audio.currentTime));
                 // encodedUsername = encodeURIComponent(username);
                 // encodedPassword = encodeURIComponent(password);
                 // document.cookie = "username=" + encodedUsername + ";";

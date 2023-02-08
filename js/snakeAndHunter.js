@@ -6,7 +6,8 @@ import { updateBanana, drawBanana, generateBanana, useBanana, updateBananaStatus
 import { updateOrange, drawOrange, generateOrange, useOrange, updateOrangeStatus,getOrangeStatus } from "./orange.js";
 import { gamePaused } from "./options.js";
 
-let username = localStorage.getItem("username").split('"')[1];
+// let username = localStorage.getItem("username").split('"')[1];
+let username = "Guo Heng";
 const APIKEY = "63d372573bc6b255ed0c4352";
 let lastRenderTime1 = 0;
 let lastRenderTime2 = 0;
@@ -26,8 +27,19 @@ let orangeUsed = false;
 let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
+var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
+audio.volume = 0.15;
+audio.loop = true;
+audio.play();
+
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
+    if (gamePaused){
+        audio.pause();
+    }
+    else{
+        audio.play();
+    }
     inputDirection = getInputDirection();
     // check if the player has moved, once the player moves then the game will start
     if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){

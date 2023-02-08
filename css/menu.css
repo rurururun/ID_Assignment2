@@ -13,8 +13,8 @@ body{
 
 .menu{
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     flex-direction: column;
     justify-content: center;
     justify-content: space-evenly;
@@ -30,4 +30,15 @@ body{
     border-color: lightskyblue;
     border-width: 10px;
     border-radius: 10px;
+}
+
+.menu > button:hover{
+    background-color: blue;
+    color: white;
+}
+
+.menu > h1{
+    margin-top: 0;
+    font-size: 50px;
+    text-align: center;
 }

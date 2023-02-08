@@ -18,7 +18,7 @@ window.addEventListener('keyup', e => {
             }
             break;
         case 'Escape':
-            window.history.back();
+            window.location = "mainMenu.html";
             break;
     }
 })
