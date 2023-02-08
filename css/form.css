@@ -16,8 +16,6 @@ body{
     width: auto;
     height: auto;
     flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;
     background-color: lightcyan;
     border: solid lightskyblue;
     border-width: 10px;
@@ -35,3 +33,97 @@ p{
     border-width: 10px;
     border-radius: 10px;
 }
+
+.dropdown{
+    width: 155px;
+    height: 200px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+}
+
+.dropdown > li{
+    width: 130px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.dropdown > li:hover{
+    background-color: gray;
+}
+
+/*
+.select{
+    background-color: #2a2f3b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #2a2f3b;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.select-clicked{
+    border: 2px solid #26489a;
+    box-shadow: 0 0 .8em #26489a;
+}
+
+.select:hover{
+    background-color: #323741;
+}
+
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+}
+
+.caret-rotate{
+    transform: rotate(180deg);
+}
+
+.menu{
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: #323741;
+    border: 1px solid #363a43;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    color: #fff;
+    opacity: 0;
+    display: none;
+}
+
+.menu > li{
+    padding: .7em .5em;
+    margin: .3em 0;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.menu > li:hover{
+    background-color: #2a2d35;
+}
+
+.active{
+    background-color: #23242a;
+}
+
+.menu-open{
+    display: block;
+    opacity: 1;
+} */
