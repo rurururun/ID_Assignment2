@@ -15,6 +15,30 @@ body{
 }
 
 @media only screen and (max-width: 540px){
+    #gameMenu{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.592);
+    }
+    #legends{
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legends > div{
+        display: flex;
+    }
+    #legends > div > h1{
+        font-size: 8px;
+    }
+    #legends > h1{
+        font-size: 8px;
+    }
     #score{
         margin-right: 10px;
     }
@@ -37,13 +61,13 @@ body{
     }
     .stats > h1{
         width: fit-content;
-        font-size: 20px;
+        font-size: 15px;
     }
     #displayFood{
         margin-right: 10px;
         align-self: center;
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         background-color: red;
         border: 2px solid black;
         border-top-right-radius: 20px;
@@ -54,8 +78,8 @@ body{
     #displayBanana{
         margin-right: 10px;
         align-self: center;
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         background-color: yellow;
         border: 2px solid black;
         border-top-right-radius: 20px;
@@ -66,8 +90,8 @@ body{
     #displayOrange{
         margin-right: 10px;
         align-self: center;
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         background-color: orange;
         border: 2px solid black;
         border-top-right-radius: 20px;
@@ -87,16 +111,16 @@ body{
     }
 
     #pause1{
-        width: 4px;
-        height: 20px;
+        width: 3px;
+        height: 15px;
         background-color: white;
         align-self: center;
         margin-right: 5px;
     }
     
     #pause2{
-        width: 4px;
-        height: 20px;
+        width: 3px;
+        height: 15px;
         background-color: white;
         align-self: center;
         margin-right: 10px;
@@ -105,16 +129,54 @@ body{
     #resume{
         width: 0;
         height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 16px solid white;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 14px solid white;
         align-self: center;
         margin-right: 10px;
         transform: rotate(90deg);
     }
+    #legend{
+        margin-left: 20px;
+        text-align: center;
+        align-self: center;
+        width: 15px;
+        height: 15px;
+        background-color: #a1cb2e;
+        border: 7px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legend:hover{
+        background-color: #bb8141;
+        border: 10px solid #a1cb2e;
+    }
 }
 
 @media only screen and (min-width: 540px) and (max-width: 799px){
+    #gameMenu{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.592);
+    }
+    #legends{
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legends > div{
+        display: flex;
+    }
+    #legends > div > h1{
+        font-size: 20px;
+    }
+    #legends > h1{
+        font-size: 20px;
+    }
     #score{
         margin-right: 30px;
     }
@@ -211,9 +273,48 @@ body{
         margin-right: 20px;
         transform: rotate(90deg);
     }
+    #legend{
+        margin-left: 20px;
+        text-align: center;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 20px;
+        font-size: 25px;
+    }
+    #legend:hover{
+        background-color: #bb8141;
+        border: 10px solid #a1cb2e;
+    }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1200px){
+    #gameMenu{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.592);
+    }
+    #legends{
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legends > div{
+        display: flex;
+    }
+    #legends > div > h1{
+        font-size: 25px;
+    }
+    #legends > h1{
+        font-size: 25px;
+    }
     #score{
         margin-right: 35px;
     }
@@ -309,9 +410,45 @@ body{
         margin-right: 20px;
         transform: rotate(90deg);
     }
+    #legend{
+        margin-left: 20px;
+        text-align: center;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 20px;
+        font-size: 25px;
+    }
+    #legend:hover{
+        background-color: #bb8141;
+        border: 10px solid #a1cb2e;
+    }
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 2000px){
+    #gameMenu{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.592);
+    }
+    #legends{
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legends > div{
+        display: flex;
+    }
+    #legends > div > h1{
+        font-size: 30px;
+    }
     #score{
         margin-right: 50px;
     }
@@ -408,9 +545,47 @@ body{
         margin-right: 20px;
         transform: rotate(90deg);
     }
+
+    #legend{
+        margin-left: 20px;
+        text-align: center;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        background-color: #a1cb2e;
+        border: 15px solid #bb8141;
+        font-size: 35px;
+        border-radius: 30px;
+    }
+
+    #legend:hover{
+        background-color: #bb8141;
+        border: 15px solid #a1cb2e;
+    }
 }
 
 @media only screen and (min-width: 2001px){
+    #gameMenu{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.592);
+    }
+    #legends{
+        background-color: #a1cb2e;
+        border: 10px solid #bb8141;
+        border-radius: 10px;
+    }
+    #legends > div{
+        display: flex;
+    }
+    #legends > div > h1{
+        font-size: 30px;
+    }
     #score{
         margin-right: 70px;
     }
@@ -508,6 +683,22 @@ body{
         align-self: center;
         margin-right: 20px;
         transform: rotate(90deg);
+    }
+    #legend{
+        margin-left: 20px;
+        text-align: center;
+        align-self: center;
+        width: 70px;
+        height: 70px;
+        background-color: #a1cb2e;
+        border: 20px solid #bb8141;
+        border-radius: 30px;
+        font-size: 60px;
+    }
+
+    #legend:hover{
+        background-color: #bb8141;
+        border: 20px solid #a1cb2e;
     }
 }
 

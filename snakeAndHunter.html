@@ -11,6 +11,23 @@
     <script src="js\snakeAndHunter.js" type="module"></script>
 </head>
 <body>
+    <div id="gameMenu">
+        <div id="legends">
+            <div>
+                <div id="displayFood"></div>
+                <h1>Apple (Adds 1 score)</h1>
+            </div>
+            <div>
+                <div id="displayBanana"></div>
+                <h1>Banana (Press Q to use. When used, gains 50% more movement speed)</h1>
+            </div>
+            <div>
+                <div id="displayOrange"></div>
+                <h1>Orange (Press E to use. When used, reduces 50% of hunter's movement speed)</h1>
+            </div>
+            <h1>Press Esc once to go back, press Esc twice to exit the game</h1>
+        </div>
+    </div>
     <div class="stats">
         <div id="displayFood"></div>
         <h1 id="score">0</h1>
@@ -22,51 +39,9 @@
         <div id="pause2"></div>
         <div id="resume"></div>
         <h1 id="instruction">(P)</h1>
+        <div id="legend">=</div>
     </div>
     <div class="flexcontainer">
-        <!-- <div id="leftSide">
-            <div id="stats">
-                <h1>Stats</h1>
-                <div>
-                    <div id="score">
-                        <div>Score: 0</div>
-                    </div>
-                    <div id="length">
-                        <div>Snake Length: 1</div>
-                    </div>
-                </div>
-            </div>
-            <div id="powerUps">
-                <h1>Power Ups</h1>
-                <div>
-                    <div id="banana">
-                        <div>Banana: 0</div>
-                        <div>(Press Q to use)</div>
-                    </div>
-                    <div id="orange">
-                        <div>Orange: 0</div>
-                        <div>(Press E to use)</div>
-                    </div>
-                </div>
-            </div>
-            <div id="Options">
-                <h1>Options</h1>
-                <div>
-                    <div>
-                        <div>Pause Game</div>
-                        <div>(Press P to pause)</div>
-                    </div>
-                    <div>
-                        <div>Resume Game</div>
-                        <div>(Press P again to resume)</div>
-                    </div>
-                    <div>
-                        <div>Exit Game</div>
-                        <div>(Press Esc to exit game)</div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div id="board">
         </div>
     </div>
