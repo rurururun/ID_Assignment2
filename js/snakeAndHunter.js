@@ -27,7 +27,7 @@ let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
 var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
-audio.volume = 0.2;
+audio.volume = 0;
 audio.loop = true;
 audio.play();
 
