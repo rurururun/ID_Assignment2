@@ -1,10 +1,10 @@
-import { updateSnake, drawSnake, snakeIntersection, onSnake, getSnakeLength } from "./snake.js";
+import { updateSnake, drawSnake, snakeIntersection, onSnake } from "./snake.js";
 import { updateFood, drawFood, score, food } from "./food.js";
 import { updateHunter, drawHunter, getHunter, hunterSpeed, changeHunterSpeed } from "./hunter.js";
 import { getInputDirection } from "./input.js";
 import { updateBanana, drawBanana, generateBanana, useBanana, updateBananaStatus, getBananaStatus } from "./banana.js";
 import { updateOrange, drawOrange, generateOrange, useOrange, updateOrangeStatus,getOrangeStatus } from "./orange.js";
-import { gamePaused } from "./options.js";
+import { gamePaused, changeGameState } from "./options.js";
 
 let username = localStorage.getItem("username").split('"')[1];
 const APIKEY = "63d372573bc6b255ed0c4352";
@@ -31,6 +31,15 @@ audio.volume = 0;
 audio.loop = true;
 audio.play();
 
+// $("#legend").click(function() {
+//     if (gamePaused){
+//         changeGameState(false);
+//     }
+//     else{
+//         changeGameState(true);
+//     }
+// })
+
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
     inputDirection = getInputDirection();
@@ -38,7 +47,6 @@ function main(currentTime){
         $("#resume").show();
         $("#pause1").hide();
         $("#pause2").hide();
-        console.log("test");
     }
     else{
         $("#resume").hide();
