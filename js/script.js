@@ -1,10 +1,7 @@
 var audio = new Audio("audio/10. Boundless Slumber.wav");
 audio.volume = 0.4;
 audio.loop = true;
-
-$(document).ready(function(){
-    audio.play();
-})
+audio.play();
 
 if (localStorage.getItem("username") != null && localStorage.getItem("password") != null){
     window.location = "mainMenu.html";

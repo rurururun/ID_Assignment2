@@ -6,7 +6,9 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
+    background-image: url(/img/jungle-cartoon-background-free-vector.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: center;
     align-items: center;
 }

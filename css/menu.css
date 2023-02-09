@@ -6,39 +6,57 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
+    background-image: url(/img/jungle-cartoon-background-free-vector.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: center;
     align-items: center;
 }
 
 .menu{
     display: flex;
-    width: 300px;
-    height: 300px;
+    width: 50vw;
+    height: 70vh;
     flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;
-    background-color: lightcyan;
-    border: solid lightskyblue;
-    border-width: 10px;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.menu > button{
-    background-color: lightblue;
-    border-color: lightskyblue;
-    border-width: 10px;
-    border-radius: 10px;
-}
-
-.menu > button:hover{
-    background-color: blue;
-    color: white;
+    background-color: #63c132;
+    border: solid #bb8141;
+    border-width: 1vw;
+    padding: 1vw;
+    border-radius: 3vw;
 }
 
 .menu > h1{
-    margin-top: 0;
-    font-size: 50px;
+    font-family: "Audiowide", sans-serif;
+    font-size: 4rem;
+    color: #7b470b;
+    text-shadow: 0 0 1vw#bb8141;
+    margin: 0;
     text-align: center;
+}
+
+.menu-buttons{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-buttons > button{
+    width: 30vw;
+    height: 10vh;
+    background-color: #8fd869;
+    border-color: #bb8141;
+    border-width: 1vw;
+    border-radius: 3vw;
+    box-shadow: 0 0 5px black;
+    font-size: 2vw;
+}
+
+.menu-buttons > button:hover{
+    background-color: #bb8141;
+    border-color: #8fd869;
+    color: white;
+    text-shadow: 0 0 4px black;
 }

@@ -6,8 +6,7 @@ import { updateBanana, drawBanana, generateBanana, useBanana, updateBananaStatus
 import { updateOrange, drawOrange, generateOrange, useOrange, updateOrangeStatus,getOrangeStatus } from "./orange.js";
 import { gamePaused } from "./options.js";
 
-// let username = localStorage.getItem("username").split('"')[1];
-let username = "Guo Heng";
+let username = localStorage.getItem("username").split('"')[1];
 const APIKEY = "63d372573bc6b255ed0c4352";
 let lastRenderTime1 = 0;
 let lastRenderTime2 = 0;
@@ -28,58 +27,63 @@ let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
 var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
-audio.volume = 0.15;
+audio.volume = 0.2;
 audio.loop = true;
 audio.play();
 
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
-    if (gamePaused){
-        audio.pause();
-    }
-    else{
-        audio.play();
-    }
     inputDirection = getInputDirection();
     // check if the player has moved, once the player moves then the game will start
     if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
         // check if game is over
         if (gameOver){
-            // make a object to store the data to be inserted into the database
-            // adapted from restdb api
-            let jsondata = {
-                "username": username,
-                "score": score + (bananaCount * 10) + (orangeCount * 10)
-            };
+            // // make a object to store the data to be inserted into the database
+            // // adapted from restdb api
+            // let jsondata = {
+            //     "username": username,
+            //     "score": score + (bananaCount * 10) + (orangeCount * 10)
+            // };
 
-            // create AJAX settings
-            let settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://idassignment2-0ba8.restdb.io/rest/endless-mode",
-                "method": "POST",
-                "headers": {
-                    "content-type": "application/json",
-                    "x-apikey": APIKEY,
-                    "cache-control": "no-cache"
-                },
-                "processData": false,
-                "data": JSON.stringify(jsondata)
-            };
+            // // create AJAX settings
+            // let settings = {
+            //     "async": true,
+            //     "crossDomain": true,
+            //     "url": "https://idassignment2-0ba8.restdb.io/rest/endless-mode",
+            //     "method": "POST",
+            //     "headers": {
+            //         "content-type": "application/json",
+            //         "x-apikey": APIKEY,
+            //         "cache-control": "no-cache"
+            //     },
+            //     "processData": false,
+            //     "data": JSON.stringify(jsondata)
+            // };
 
-            // send AJAX request over to restdb
-            $.ajax(settings).done(function (){
-                // prompt the player the score they got and ask whether they want to play again or stop playing
-                if (confirm(
-                    'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
-                    '. Press ok if you want to play again or press cancel if you want to stop.'
-                )){
-                    window.location = "snakeAndHunter.html";
-                }
-                else{
-                    window.history.back();
-                }
-            })
+            // // send AJAX request over to restdb
+            // $.ajax(settings).done(function (){
+            //     // prompt the player the score they got and ask whether they want to play again or stop playing
+            //     if (confirm(
+            //         'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
+            //         '. Press ok if you want to play again or press cancel if you want to stop.'
+            //     )){
+            //         window.location = "snakeAndHunter.html";
+            //     }
+            //     else{
+            //         window.location = "mainMenu.html";
+            //     }
+            // })
+
+            // prompt the player the score they got and ask whether they want to play again or stop playing
+            if (confirm(
+                'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
+                '. Press ok if you want to play again or press cancel if you want to stop.'
+            )){
+                window.location = "snakeAndHunter.html";
+            }
+            else{
+                window.location = "mainMenu.html";
+            }
             return;
         }
 
@@ -282,6 +286,9 @@ function drawGame(){
 
 function checkDeath(){
     gameOver = snakeIntersection() || onSnake(getHunter());
+    if (gameOver){
+        audio.pause();
+    }
 }
 
 function drawPath(){
