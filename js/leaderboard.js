@@ -1,3 +1,57 @@
+let url = "https://restcountries.com/v3.1/all";
+
+fetch(url)
+    .then(response => response.json())
+    .then(function(data){
+        for (let a = 0; a < data.length; a++){
+            let newLi = document.createElement("li");
+            newLi.innerHTML = `<img src = "` + data[a]["flags"]["png"] + `" style = "width: 50px; height:25px">` + data[a]["name"]["common"]
+            document.querySelector(".menu").append(newLi)
+        }
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        for (let a = 0; a < dropdowns.length; a++){
+            const select = dropdowns.item(a).querySelector(".select");
+            const menu = dropdowns.item(a).querySelector(".menu");
+            const options = dropdowns.item(a).querySelectorAll(".menu li");
+            const selected = dropdowns.item(a).querySelector(".selected");
+
+            select.addEventListener('click', () => {
+                if (select.classList.contains("select-clicked")){
+                    select.classList.remove("select-clicked");
+                }
+                else{
+                    select.classList.add("select-clicked");
+                }
+                if (menu.classList.contains("menu-open")){
+                    menu.classList.remove("menu-open");
+                }
+                else{
+                    menu.classList.add("menu-open");
+                }
+                console.log("test")
+            });
+
+            for (let b = 0; b < options.length; b++){
+                options.item(b).addEventListener('click', () => {
+                    selected.innerHTML = options.item(b).innerHTML;
+                    select.classList.remove("select-clicked");
+                    menu.classList.remove("menu-open");
+
+                    for (let c = 0; c < options.length; c++){
+                        options.item(c).classList.remove("active");
+                    }
+
+                    options.item(b).classList.add("active");
+                });
+            }
+        }
+
+    });
+function mainMenu(){
+    window.location = "mainMenu.html";
+}
+
 // const APIKEY = "63d372573bc6b255ed0c4352";
 // let users = [];
 // let scores = [];
@@ -57,3 +111,4 @@ if (localStorage.getItem("bgmTime") != null){
 }
 
 audio.play();
+
