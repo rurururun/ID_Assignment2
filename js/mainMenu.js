@@ -15,6 +15,9 @@ function play(){
 function leaderBoard(){
     window.location = "leaderBoard.html";
 }
+function about(){
+    window.location = "aboutUs.html";
+}
 
 function logOut(){
     localStorage.removeItem("username");

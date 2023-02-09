@@ -3,6 +3,7 @@ body{
 }
 .flex-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -15,19 +16,121 @@ body{
 .rank{
   width: 50px;
   text-align: start;
+  font-size: 35px;
+  text-align: center;
+
 }
 
 .name{
   width: 100px;
   text-align: start;
+  font-size: 35px;
 }
 
+.score{
+  width: 50px;
+  text-align: start;
+  font-size: 35px;
+}
 table{
+  height: 700px;
+  width: 100%;
+}
+
+.header > th{
+  font-size: 50px;
+}
+
+
+.select{
+  background-color: #8fd869;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 10px solid #bb8141;
+  border-radius: 3vw;
+  box-shadow: 0 0 5px black;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1vw;
+  
+}
+
+.select:hover{
+  background-color: #bb8141;
+  border-color: #8fd869;
+  color: white;
+  text-shadow: 0 0 4px black;
+}
+
+.menu{
+  width: 140px;
+  height: 186px;
+  list-style: none;
+  padding: 0.25em 0.5em;
+  background-color: white;
+  box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+  border-radius: .5em;
+  display: none;
+  margin: 0;
+  opacity: 0;
+  overflow-y: overlay;
+  position: absolute;
+  z-index: 10;
+}
+
+.menu > li{
+  width: 130px;
+  padding: 5%;
+  padding-left: 0;
+  border-radius: .5em;
+  cursor: pointer;
+}
+
+.menu > li:hover{
+  background-color: gray;
+}
+
+.active{
+    background-color: #23242a;
+}
+
+.menu-open{
+    display: block;
+    opacity: 1;
+} 
+
+button{
+  width: 7vw;
+  height: 7vh;
+  background-color: #8fd869;
+  border-color: #bb8141;
+  border-width: 10px;
+  border-radius: 3vw;
+  box-shadow: 0 0 5px black;
+  font-size: 1vw;
+}
+button > button:hover{
+  background-color: #bb8141;
+  border-color: #8fd869;
+  color: white;
+  text-shadow: 0 0 4px black;
+}
+
+.table{
   background-color: #63c132;
   border: 1vmin solid #bb8141;
   border-radius: 2vmin;
 }
 
-.header > th{
-  padding: 0;
+.table h1{
+  font-size: 75px;
+  width: 100%;
+  text-align: center;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
 }

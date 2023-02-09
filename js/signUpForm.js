@@ -30,51 +30,6 @@ $(document).ready(function () {
             }
         });
 
-    // const dropdowns = document.querySelectorAll(".dropdown");
-
-    // for (let a = 0; a < dropdowns.length; a++){
-    //     const select = dropdowns.item(a).querySelector(".select");
-    //     const caret = dropdowns.item(a).querySelector(".caret");
-    //     const menu = dropdowns.item(a).querySelector(".menu");
-    //     const options = dropdowns.item(a).querySelectorAll(".menu li");
-    //     const selected = dropdowns.item(a).querySelector(".selected");
-
-    //     select.addEventListener('click', () => {
-    //         if (select.classList.contains("select-clicked")){
-    //             select.classList.remove("select-clicked");
-    //         }
-    //         else{
-    //             select.classList.add("select-clicked");
-    //         }
-    //         if (caret.classList.contains("caret-rotate")){
-    //             caret.classList.remove("caret-rotate");
-    //         }
-    //         else{
-    //             caret.classList.add("caret-rotate");
-    //         }
-    //         if (menu.classList.contains("menu-open")){
-    //             menu.classList.remove("menu-open");
-    //         }
-    //         else{
-    //             menu.classList.add("menu-open");
-    //         }
-    //     });
-
-    //     for (let b = 0; b < options.length; b++){
-    //         options.item(b).addEventListener('click', () => {
-    //             selected.innerHTML = options.item(b).innerHTML;
-    //             select.classList.remove("select-clicked");
-    //             caret.classList.remove("caret-rotate");
-    //             menu.classList.remove("menu-open");
-
-    //             for (let c = 0; c < options.length; c++){
-    //                 options.item(c).classList.remove("active");
-    //             }
-
-    //             options.item(b).classList.add("active");
-    //         });
-    //     }
-    // }
 
     document.querySelector("#country").addEventListener('keyup', e => {
         let same = false;
