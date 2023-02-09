@@ -1,53 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 body{
+  margin: 0;
+}
+.flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   background-image: url(/img/jungle-cartoon-background-free-vector.webp);
   background-repeat: no-repeat;
   background-size: cover;
 }
-#leaderboard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-collapse: collapse;
-  width: 100%;
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-}
-  
-#leaderboard th, #leaderboard td {
-  padding: 8px;
-  text-align: left;
-  background-color: #63c132;
-  font-size: 30px;
-  width: 10vw;
-  height: 3vh;
-}
-
-img{
-  width: 30px;
-  height: 20px;
-}
-
-.userRow tr{
-  border: 4px solid black;
-}
-
-
-.flex-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-container h1{
-  font-family: 'Audiowide', cursive;  
-  font-size: 75px;
-  text-align: center;
-  margin: 0;
-}
 
 .rank{
-  width: 10px;
+  width: 50px;
+  text-align: start;
+}
+
+.name{
+  width: 100px;
+  text-align: start;
+}
+
+table{
+  background-color: #63c132;
+  border: 1vmin solid #bb8141;
+  border-radius: 2vmin;
+}
+
+.header > th{
+  padding: 0;
 }

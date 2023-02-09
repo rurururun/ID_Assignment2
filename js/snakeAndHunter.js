@@ -34,6 +34,17 @@ audio.play();
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
     inputDirection = getInputDirection();
+    if (gamePaused){
+        $("#resume").show();
+        $("#pause1").hide();
+        $("#pause2").hide();
+        console.log("test");
+    }
+    else{
+        $("#resume").hide();
+        $("#pause1").show();
+        $("#pause2").show();
+    }
     // check if the player has moved, once the player moves then the game will start
     if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
         // check if game is over
@@ -97,10 +108,9 @@ function main(currentTime){
         lastRenderTime1 = currentTime;
         updateGame();
         drawGame();
-        document.querySelector('#score').innerHTML = `Score: ` + score;
-        document.querySelector('#length').innerHTML = `Snake Length: ` + getSnakeLength();
-        document.querySelector('#banana').innerHTML = `Banana: ` + bananaCount + `<br/>(Press Q to use)`;
-        document.querySelector('#orange').innerHTML = `Orange: ` + orangeCount + `<br/>(Press E to use)`;
+        document.querySelector('#score').innerHTML = score;
+        document.querySelector('#banana').innerHTML = bananaCount + " (Q)";
+        document.querySelector('#orange').innerHTML = orangeCount + " (E)";
     }
     else{
         window.requestAnimationFrame(main);

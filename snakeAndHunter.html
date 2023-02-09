@@ -5,13 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endless</title>
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="css\snakeAndHunter.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js\snakeAndHunter.js" type="module"></script>
 </head>
 <body>
+    <div class="stats">
+        <div id="displayFood"></div>
+        <h1 id="score">0</h1>
+        <div id="displayBanana"></div>
+        <h1 id="banana">0 (Q)</h1>
+        <div id="displayOrange"></div>
+        <h1 id="orange">0 (E)</h1>
+        <div id="pause1"></div>
+        <div id="pause2"></div>
+        <div id="resume"></div>
+        <h1 id="instruction">(P)</h1>
+    </div>
     <div class="flexcontainer">
-        <div id="leftSide">
+        <!-- <div id="leftSide">
             <div id="stats">
                 <h1>Stats</h1>
                 <div>
@@ -53,7 +66,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div id="board">
         </div>
     </div>
