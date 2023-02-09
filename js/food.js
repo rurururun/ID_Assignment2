@@ -9,6 +9,8 @@ export let score = 0;
 export function updateFood(){
     // check if the snake has collided with the food
     if (onFood(food)){
+        var audio = new Audio("audio/Bite Sound Effect.mp3");
+        audio.play();
         // increase the value of the newSegments variable in snake.js
         expandSnake(eat);
 

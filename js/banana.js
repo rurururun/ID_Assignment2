@@ -7,6 +7,8 @@ let bananaUsed = false;
 export function updateBanana(){
     if (banana != null){
         if (onFood(banana)){
+            var audio = new Audio("audio/Pick Up Power Up.mp3");
+            audio.play();
             banana = null;
             return true;
         }

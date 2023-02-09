@@ -27,22 +27,19 @@ let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
 var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
-audio.volume = 0;
+audio.volume = 0.1;
 audio.loop = true;
 audio.play();
-
-// $("#legend").click(function() {
-//     if (gamePaused){
-//         changeGameState(false);
-//     }
-//     else{
-//         changeGameState(true);
-//     }
-// })
 
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
     inputDirection = getInputDirection();
+    if (gamePaused || gameOver){
+        audio.pause();
+    }
+    else{
+        audio.play();
+    }
     if (gamePaused){
         $("#resume").show();
         $("#pause1").hide();
@@ -57,6 +54,9 @@ function main(currentTime){
     if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
         // check if game is over
         if (gameOver){
+            var deathSound = new Audio("audio/Death Sound Effect.mp3");
+            deathSound.play();
+            setTimeout(prompt, 2000);
             // // make a object to store the data to be inserted into the database
             // // adapted from restdb api
             // let jsondata = {
@@ -94,14 +94,16 @@ function main(currentTime){
             // })
 
             // prompt the player the score they got and ask whether they want to play again or stop playing
-            if (confirm(
-                'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
-                '. Press ok if you want to play again or press cancel if you want to stop.'
-            )){
-                window.location = "snakeAndHunter.html";
-            }
-            else{
-                window.location = "mainMenu.html";
+            function prompt(){
+                if (confirm(
+                    'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
+                    '. Press ok if you want to play again or press cancel if you want to stop.'
+                )){
+                    window.location = "snakeAndHunter.html";
+                }
+                else{
+                    window.location = "mainMenu.html";
+                }
             }
             return;
         }

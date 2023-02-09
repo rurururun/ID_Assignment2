@@ -7,6 +7,8 @@ let orangeUsed = false;
 export function updateOrange(){
     if (orange != null){
         if (onFood(orange)){
+            var audio = new Audio("audio/Pick Up Power Up.mp3");
+            audio.play();
             orange = null;
             return true;
         }
