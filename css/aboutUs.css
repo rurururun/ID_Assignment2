@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+}
+.flexcontainer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/jungle-cartoon-background-free-vector.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.block{
+    display: flex;
+    margin: 400px;
+    flex-direction: column;
+    background-color: #63c132;
+    border: solid #bb8141;
+    border-width: 1vw;
+    padding: 1vw;
+    border-radius: 3vw;
+}
+
+.block h1{
+    font-family: "Audiowide", sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+.block p{
+    font-family: "Audiowide", sans-serif;
+    font-size: 50px;
+}
+button{
+    margin: 10px;
+    background-color: #8fd869;
+    border-color: #bb8141;
+    border-width: 1vw;
+    border-radius: 3vw;
+    box-shadow: 0 0 5px black;
+    font-size: 1vw;
+  }
+  button > button:hover{
+    background-color: #bb8141;
+    border-color: #8fd869;
+    color: white;
+    text-shadow: 0 0 4px black;
+  }

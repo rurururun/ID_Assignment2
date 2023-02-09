@@ -5,7 +5,7 @@ fetch(url)
     .then(function(data){
         for (let a = 0; a < data.length; a++){
             let newLi = document.createElement("li");
-            newLi.innerHTML = `<img src = "` + data[a]["flags"]["png"] + `" style = "width: 50px; height:25px">` + data[a]["name"]["common"]
+            newLi.innerHTML = `<img src = "` + data[a]["flags"]["png"] + `" style = "width: 50px; height:25px"> ` + data[a]["name"]["common"]
             document.querySelector(".menu").append(newLi)
         }
         const dropdowns = document.querySelectorAll(".dropdown");
@@ -83,11 +83,12 @@ function mainMenu(){
 //         if(localStorage.getItem("Username" + i)!=null){
 //             //Creates rows for data
 //             let newRow = document.createElement("tr");
-//             newRow.classList.add("userData" + i);
+//             newRow.classList.add("row" + i);
 //             document.querySelector(".userRow").append(newRow);
 //             //Displays ranks from 1-10
 //             let newElement = document.createElement("td"); 
 //             newElement.innerHTML = i + 1;
+//             newElement.setAttribute(".rank")
 //             document.querySelector(".userData"+ i).append(newElement);
 //             //Displays data 
 //             newElement = document.createElement("td");
