@@ -16,27 +16,31 @@ body{
 .rank{
   width: 50px;
   text-align: start;
+  font-size: 35px;
 }
 
 .name{
   width: 100px;
   text-align: start;
+  font-size: 35px;
 }
 
 .score{
   width: 50px;
   text-align: start;
+  font-size: 35px;
 }
 table{
   background-color: #63c132;
   border: 1vmin solid #bb8141;
   border-radius: 2vmin;
-  width: 400px;
-  height: 500px;
+  width: 550px;
+  height: 700px;
 }
 
 .header > th{
   padding: 0;
+  font-size: 50px;
 }
 
 
@@ -101,7 +105,7 @@ table{
 
 button{
   width: 7vw;
-  height: 5vh;
+  height: 7vh;
   background-color: #8fd869;
   border-color: #bb8141;
   border-width: 1vw;
