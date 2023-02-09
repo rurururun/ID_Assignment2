@@ -28,18 +28,12 @@ let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
 var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
-audio.volume = 0.15;
+audio.volume = 1;
 audio.loop = true;
 audio.play();
 
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
-    if (gamePaused){
-        audio.pause();
-    }
-    else{
-        audio.play();
-    }
     inputDirection = getInputDirection();
     // check if the player has moved, once the player moves then the game will start
     if ((inputDirection.x != 0 || inputDirection.y != 0) && !gamePaused){
@@ -77,7 +71,7 @@ function main(currentTime){
                     window.location = "snakeAndHunter.html";
                 }
                 else{
-                    window.history.back();
+                    window.location = "mainMenu.html";
                 }
             })
             return;
@@ -282,6 +276,9 @@ function drawGame(){
 
 function checkDeath(){
     gameOver = snakeIntersection() || onSnake(getHunter());
+    if (gameOver){
+        audio.pause();
+    }
 }
 
 function drawPath(){
