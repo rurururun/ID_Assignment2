@@ -21,7 +21,10 @@ As a user, I want to be able to have music playing in the background so that I c
 # Credits
 Acknowledgements:
 Snake Game: https://youtu.be/QTcIXok9wNY
+Sound Trimmer: https://audiotrimmer.com/
 
+
+Media:
 Jungle Background Image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fcartoon-jungle&psig=AOvVaw3U-GrdmUiVEqoLOk_7auX3&ust=1676005930108000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDx2eLWh_0CFQAAAAAdAAAAABBR
 
-Apple Bite Sound Effect:https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6928
+Bite Sound Effect:https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6928

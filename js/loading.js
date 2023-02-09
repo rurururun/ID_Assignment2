@@ -51,12 +51,12 @@ function myFunction(){
     }
     for (let i = 0; i<scoreInDescOrder.length; i++){
         let UsernameKey = "Username" + i;
-        let CountryKey = "Country" + i;
+        let CountryKey = "Countryflag" + i;
         let ScoreKey = "Score" + i;
         for(let x = 0; x<users.length; x++){
             if(scoreInDescOrder[i].username == users[x].username){
                 localStorage.setItem(UsernameKey, JSON.stringify(scoreInDescOrder[i].username))
-                localStorage.setItem(CountryKey,JSON.stringify(users[x].country))
+                localStorage.setItem(CountryKey,JSON.stringify(users[x].countryflag))
                 localStorage.setItem(ScoreKey, JSON.stringify(scoreInDescOrder[i].score))
             }
             console.log("test")
@@ -86,7 +86,7 @@ $.ajax(settings).done(function (response){
     for (let i = 0; i < response.length; i++){
         let user = {
             "username": response[i].username,
-            "country": response[i].country,
+            "countryflag": response[i].countryflag
         };
         users[i] = user;
     };
