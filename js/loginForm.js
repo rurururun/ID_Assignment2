@@ -1,11 +1,12 @@
+var audio = new Audio("audio/10. Boundless Slumber.wav");
+audio.volume = 0.4;
+audio.loop = true;
+
 if (localStorage.getItem("bgmTime") != null){
-    var audio = new Audio("audio/10. Boundless Slumber.wav");
-    audio.volume = 0.4;
     audio.currentTime = parseInt(localStorage.getItem("bgmTime")) + 1;
-    audio.play();
-    audio.loop = true;
-    console.log(audio.currentTime);
 }
+
+audio.play();
 
 function hover(){
     var hoversfx = new Audio("audio/Button Hover.mp3");
@@ -71,7 +72,6 @@ $(document).ready(function () {
         }
 
         if (usernameStatus == true && passwordStatus == true){
-            console.log("test");
             localStorage.setItem("username", JSON.stringify(username));
             localStorage.setItem("password", JSON.stringify(password));
             window.location = "loadingScreen.html";

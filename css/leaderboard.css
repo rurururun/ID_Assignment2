@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+  background-image: url(/img/jungle-cartoon-background-free-vector.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #leaderboard {
     display: grid;
     place-items: center;
@@ -23,7 +28,4 @@
 
   .userRow tr{
     border: 4px solid black;
-  }
-  *{
-    background-color: lightskyblue;
   }
