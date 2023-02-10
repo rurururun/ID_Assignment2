@@ -91,8 +91,7 @@ button:hover{
     justify-content: space-evenly;
 }
 
-
-@media(max-width:768px){
+@media(max-width:425px){
     .form{
         font-size: 25px;
     }
@@ -103,6 +102,35 @@ button:hover{
     .buttons> input{
         font-size: 20px;
     }
+}
+
+@media only screen and (min-width: 426px) and (max-width:768px){
+    .form{
+        font-size: 30px;
+    }
+
+    button{
+        font-size: 20px;
+    }
+    .buttons> input{
+        font-size: 20px;
+    }
+    #username{
+        width: 200px;
+        height: 20px;
+        border-width: 2px;
+
+    }
+    #password{
+        width: 200px;
+        height: 20px;
+        border-width: 2px;
+
+    }
+    #country{
+        width: 200px;
+        height: 20px;
+        border-width: 2px;
 }
 
 @media only screen and (min-width: 769px) and (max-width:1024px) {
