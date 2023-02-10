@@ -106,3 +106,7 @@ $(document).ready(function () {
         });
     }
 });
+
+function index(){
+    window.location = "index.html";
+}

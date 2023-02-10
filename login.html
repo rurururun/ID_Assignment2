@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css\form.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js\loginForm.js"></script>
 </head>
@@ -20,7 +21,10 @@
                 <label>Password:</label><br/>
                 <input type="password" placeholder="Password" id="password" required/>
             </div><br/>
-            <input type="submit" value="Submit" id="submit" onmouseover="hover()"/>
+            <div class="buttons">
+                <button onclick="index()">Back</button>
+                <input type="submit" value="Submit" id="submit" onmouseover="hover()"/>
+            </div>
         </div>
     </div>
 </body>

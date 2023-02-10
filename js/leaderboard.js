@@ -35,6 +35,7 @@ fetch(url)
             for (let b = 0; b < options.length; b++){
                 options.item(b).addEventListener('click', () => {
                     selected.innerHTML = options.item(b).innerHTML;
+                    console.log(selected.innerHTML.split(">")[1])
                     select.classList.remove("select-clicked");
                     menu.classList.remove("menu-open");
 
