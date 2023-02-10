@@ -80,26 +80,25 @@ function mainMenu(){
 //         users[i] = user;
 //     };
 //     for(let i = 0; i<users.length;i++){
-//         if(localStorage.getItem("Username" + i)!=null){
+//         if(localStorage.getItem("Username" + i)!=null && i<10){
 //             //Creates rows for data
 //             let newRow = document.createElement("tr");
-//             newRow.classList.add("row" + i);
+//             newRow.setAttribute("id","row" + i);
 //             document.querySelector(".userRow").append(newRow);
 //             //Displays ranks from 1-10
 //             let newElement = document.createElement("td"); 
 //             newElement.innerHTML = i + 1;
-//             newElement.setAttribute(".rank")
-//             document.querySelector(".userData"+ i).append(newElement);
+//             newElement.classList.add("rank")
+//             document.querySelector("#row"+ i).append(newElement);
 //             //Displays data 
 //             newElement = document.createElement("td");
-//             newElement.innerHTML = localStorage.getItem("Username" + i).split('"')[1];
-//             document.querySelector(".userData"+ i).append(newElement);
-//             newElement = document.createElement("td");
-//             newElement.innerHTML= localStorage.getItem("Country" + i).split('"')[1];
-//             document.querySelector(".userData"+i).append(newElement);
+//             newElement.innerHTML = `<img src="`+ localStorage.getItem("Countryflag" + i).split('"')[1] + `" style = "width: 50px; height:25px"> ` + localStorage.getItem("Username" + i).split('"')[1];
+//             newElement.classList.add("name")
+//             document.querySelector("#row"+ i).append(newElement);
 //             newElement = document.createElement("td");
 //             newElement.innerHTML= localStorage.getItem("Score" + i);
-//             document.querySelector(".userData"+i).append(newElement);
+//             newElement.classList.add("score")
+//             document.querySelector("#row"+ i).append(newElement);
 //         }
 //     }
 // });
