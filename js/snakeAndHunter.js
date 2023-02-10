@@ -94,19 +94,6 @@ function main(currentTime){
             //         window.location = "mainMenu.html";
             //     }
             // })
-
-            // prompt the player the score they got and ask whether they want to play again or stop playing
-            // function prompt(){
-            //     if (confirm(
-            //         'You have died. Your score was ' + (score + (bananaCount * 10 * (hunterSpeed/10)) + (orangeCount * 10 * (hunterSpeed/10))) +
-            //         '. Press ok if you want to play again or press cancel if you want to stop.'
-            //     )){
-            //         window.location = "snakeAndHunter.html";
-            //     }
-            //     else{
-            //         window.location = "mainMenu.html";
-            //     }
-            // }
             return;
         }
 

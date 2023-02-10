@@ -16,35 +16,6 @@ body{
   background-size: cover;
 }
 
-.rank{
-  width: 50px;
-  text-align: start;
-  font-size: 35px;
-  text-align: center;
-
-}
-
-.name{
-  width: 100px;
-  text-align: start;
-  font-size: 35px;
-}
-
-.score{
-  width: 50px;
-  text-align: start;
-  font-size: 35px;
-}
-table{
-  height: 700px;
-  width: 100%;
-}
-
-.header > th{
-  font-size: 50px;
-}
-
-
 .select{
   background-color: #8fd869;
   color: black;
@@ -138,32 +109,32 @@ button > button:hover{
   flex-direction: row;
 }
 
-@media (max-width: 425px) {
-  .flex-container {
-    font-size: 14px;
+@media (max-width: 426px) {
+  table{
+    height: 350px;
+    width: 100%;
   }
 
   .rank {
-    width: 25px;
+    width: 15px;
     font-size: 18px;
+    text-align: center;
   }
 
   .name {
-    width: 50px;
+    width: 15px;
     font-size: 18px;
+    text-align: left;
   }
 
   .score {
-    width: 25px;
+    width: 15px;
     font-size: 18px;
-  }
-
-  table {
-    height: 350px;
+    text-align: left;
   }
 
   .header > th {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .select {
@@ -171,31 +142,477 @@ button > button:hover{
   }
 
   button {
-    width: 15vw;
-    height: 5vh;
-    font-size: 15px;
-    
+    width: 75px;
+    height: 50px;
+    font-size: 10px;
   }
 
   .table {
     border-radius: 1vmin;
+    width: 250px;
   }
 
   .table h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
   .nav{
     object-fit: contain;
     margin: 10px;
+    align-items: center;
+  }
+
+  .nav > h1{
+    font-size: 15px;
   }
 
   .selected{
-    width: 10vw;
-    height: 3vh;
+    width: 50px;
+    height: 25px;
     font-size: 15px;
-    
+    text-align: center;
   }
-  .select{
-    margin-left: 5px;
+
+  .menu{
+    width: 50px;
+    height: 100px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .menu > li{
+    width: 50px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  
+  .menu > li:hover{
+    background-color: gray;
+  }
+  
+  .active{
+      background-color: #23242a;
+  }
+  
+  .menu-open{
+      display: block;
+      opacity: 1;
+  } 
+}
+
+@media only screen and (min-width: 427px) and (max-width: 900px){
+  table{
+    height: 350px;
+    width: 100%;
+  }
+
+  .rank{
+    width: 20px;
+    font-size: 20px;
+    text-align: center;
+  
+  }
+  .name{
+    width: 20px;
+    text-align: start;
+    font-size: 20px;
+  }
+
+  .score{
+    width: 50px;
+    text-align: start;
+    font-size: 20px;
+  }
+  
+  .header > th{
+    font-size: 20px;
+  }
+
+  .select {
+    font-size: 0.5vw;
+  }
+
+  button {
+    width: 150px;
+    height: 75px;
+    font-size: 25px;
+  }
+
+  .table {
+    border-radius: 1vmin;
+    width: 500px;
+  }
+
+  .table h1 {
+    font-size: 20px;
+  }
+
+  .nav{
+    object-fit: contain;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .nav > h1{
+    font-size: 40px;
+  }
+
+  .selected{
+    width: 75px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu{
+    width: 85px;
+    height: 150px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .menu > li{
+    width: 85px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  
+  .menu > li:hover{
+    background-color: gray;
+  }
+  
+  .active{
+      background-color: #23242a;
+  }
+  
+  .menu-open{
+      display: block;
+      opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px){
+  table{
+    height: 500px;
+    width: 100%;
+  }
+
+  .rank{
+    width: 20px;
+    font-size: 35px;
+    text-align: center;
+  
+  }
+  .name{
+    width: 20px;
+    text-align: start;
+    font-size: 35px;
+  }
+
+  .score{
+    width: 50px;
+    text-align: start;
+    font-size: 35px;
+  }
+  
+  .header > th{
+    font-size: 35px;
+  }
+
+  .select {
+    font-size: 0.5vw;
+  }
+
+  button {
+    width: 150px;
+    height: 75px;
+    font-size: 25px;
+  }
+
+  .table {
+    border-radius: 1vmin;
+    width: 500px;
+  }
+
+  .table h1 {
+    font-size: 20px;
+  }
+
+  .nav{
+    object-fit: contain;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .nav > h1{
+    font-size: 40px;
+  }
+
+  .selected{
+    width: 75px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu{
+    width: 85px;
+    height: 150px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .menu > li{
+    width: 85px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  
+  .menu > li:hover{
+    background-color: gray;
+  }
+  
+  .active{
+      background-color: #23242a;
+  }
+  
+  .menu-open{
+      display: block;
+      opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 2000px){
+  table{
+    height: 700px;
+    width: 100%;
+  }
+
+  .rank{
+    width: 20px;
+    font-size: 45px;
+    text-align: center;
+  
+  }
+  .name{
+    width: 20px;
+    text-align: start;
+    font-size: 45px;
+  }
+
+  .score{
+    width: 50px;
+    text-align: start;
+    font-size: 45px;
+  }
+  
+  .header > th{
+    font-size: 45px;
+  }
+
+  .select {
+    font-size: 0.5vw;
+  }
+
+  button {
+    width: 150px;
+    height: 75px;
+    font-size: 25px;
+  }
+
+  .table {
+    border-radius: 1vmin;
+    width: 500px;
+  }
+
+  .table h1 {
+    font-size: 20px;
+  }
+
+  .nav{
+    object-fit: contain;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .nav > h1{
+    font-size: 40px;
+  }
+
+  .selected{
+    width: 75px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu{
+    width: 85px;
+    height: 150px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .menu > li{
+    width: 85px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  
+  .menu > li:hover{
+    background-color: gray;
+  }
+  
+  .active{
+      background-color: #23242a;
+  }
+  
+  .menu-open{
+      display: block;
+      opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 2001px){
+  table{
+    height: 1000px;
+    width: 100%;
+  }
+
+  .rank{
+    width: 20px;
+    font-size: 60px;
+    text-align: center;
+  }
+  .name{
+    width: 20px;
+    text-align: start;
+    font-size: 60px;
+  }
+
+  .score{
+    width: 50px;
+    text-align: start;
+    font-size: 60px;
+  }
+  
+  .header > th{
+    font-size: 60px;
+  }
+
+  .select {
+    font-size: 0.5vw;
+  }
+
+  button {
+    width: 300px;
+    height: 150px;
+    font-size: 35px;
+  }
+
+  .table {
+    border-radius: 1vmin;
+    width: 1000px;
+  }
+
+  .table h1 {
+    font-size: 20px;
+  }
+
+  .nav{
+    object-fit: contain;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .nav > h1{
+    font-size: 80px;
+  }
+
+  .selected{
+    width: 150px;
+    height: 75px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .menu{
+    width: 160px;
+    height: 300px;
+    list-style: none;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    overflow-y: overlay;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  .menu > li{
+    width: 160px;
+    padding: 5%;
+    padding-left: 0;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  
+  .menu > li:hover{
+    background-color: gray;
+  }
+  
+  .active{
+      background-color: #23242a;
+  }
+  
+  .menu-open{
+      display: block;
+      opacity: 1;
   }
 }
