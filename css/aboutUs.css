@@ -14,13 +14,15 @@ body{
 
 .block{
     display: flex;
-    margin: 400px;
+		margin-left: 400px;
+		margin-right: 400px;
     flex-direction: column;
     background-color: #63c132;
     border: solid #bb8141;
     border-width: 1vw;
     padding: 1vw;
     border-radius: 3vw;
+    object-fit: contain;
 }
 
 .block h1{
@@ -37,10 +39,10 @@ button{
     margin: 10px;
     background-color: #8fd869;
     border-color: #bb8141;
-    border-width: 1vw;
+    border-width: 0.7vw;
     border-radius: 3vw;
     box-shadow: 0 0 5px black;
-    font-size: 1vw;
+    font-size: 1.5vw;
   }
   button > button:hover{
     background-color: #bb8141;
@@ -48,3 +50,78 @@ button{
     color: white;
     text-shadow: 0 0 4px black;
   }
+
+@media(max-width: 425px) {
+	.block {
+			margin: 20px;
+			border-width: 1.5vw;
+			padding: 0.5vw;
+			border-radius: 0.75vw;
+			text-align: center;
+	}
+	.block h1 {
+			font-size: 25px;
+	}
+	.block p {
+			font-size: 20px;
+	}
+	button {
+			margin: 20px;
+			border-width: 1.5vw;
+			border-radius: 0.75vw;
+			font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 426px) and (max-width: 769px) {
+    .block {
+        border-width: 1vw;
+        padding: 1vw;
+        border-radius: 3vw;
+				margin: 50px;
+    }
+    .block h1 {
+        font-size: 50px;
+    }
+    .block p {
+        font-size: 25px;
+    }
+    button {
+        margin: 10px;
+        border-width: 0.5vw;
+        border-radius: 1.5vw;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+	.block{
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+	.block h1{
+		font-size: 60px;
+	}
+	.block p{
+		font-size: 35px;
+	}
+	button{
+		font-size: 23px;
+	}
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+	.block{
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+	.block h1{
+		font-size: 60px;
+	}
+	.block p{
+		font-size: 35px;
+	}
+	button{
+		font-size: 23px;
+	}
+}
