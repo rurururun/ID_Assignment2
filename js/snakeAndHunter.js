@@ -58,42 +58,42 @@ function main(currentTime){
         if (gameOver){
             var deathSound = new Audio("audio/Death Sound Effect.mp3");
             deathSound.play();
-            // setTimeout(prompt, 2000);
-            // // make a object to store the data to be inserted into the database
-            // // adapted from restdb api
-            // let jsondata = {
-            //     "username": username,
-            //     "score": score + (bananaCount * 10) + (orangeCount * 10)
-            // };
+            setTimeout(prompt, 2000);
+            // make a object to store the data to be inserted into the database
+            // adapted from restdb api
+            let jsondata = {
+                "username": username,
+                "score": score + (bananaCount * 10 * (hunterSpeed / 10)) + (orangeCount * 10 * (hunterSpeed / 10))
+            };
 
-            // // create AJAX settings
-            // let settings = {
-            //     "async": true,
-            //     "crossDomain": true,
-            //     "url": "https://idassignment2-0ba8.restdb.io/rest/endless-mode",
-            //     "method": "POST",
-            //     "headers": {
-            //         "content-type": "application/json",
-            //         "x-apikey": APIKEY,
-            //         "cache-control": "no-cache"
-            //     },
-            //     "processData": false,
-            //     "data": JSON.stringify(jsondata)
-            // };
+            // create AJAX settings
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://idassignment2-0ba8.restdb.io/rest/endless-mode",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": APIKEY,
+                    "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": JSON.stringify(jsondata)
+            };
 
-            // // send AJAX request over to restdb
-            // $.ajax(settings).done(function (){
-            //     // prompt the player the score they got and ask whether they want to play again or stop playing
-            //     if (confirm(
-            //         'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
-            //         '. Press ok if you want to play again or press cancel if you want to stop.'
-            //     )){
-            //         window.location = "snakeAndHunter.html";
-            //     }
-            //     else{
-            //         window.location = "mainMenu.html";
-            //     }
-            // })
+            // send AJAX request over to restdb
+            $.ajax(settings).done(function (){
+                // prompt the player the score they got and ask whether they want to play again or stop playing
+                if (confirm(
+                    'You have died. Your score was ' + (score + (bananaCount * 10 * (hunterSpeed / 10)) + (orangeCount * 10 * (hunterSpeed / 10))) +
+                    '. Press ok if you want to play again or press cancel if you want to stop.'
+                )){
+                    window.location = "snakeAndHunter.html";
+                }
+                else{
+                    window.location = "mainMenu.html";
+                }
+            })
             return;
         }
 

@@ -13,10 +13,28 @@ As a user, I want to be able to have powerups in the game so that I have a highe
 As a user, I want to be able to have music playing in the background so that I can relax while playing the game.
 
 # Features
-
+- Feature 1 - Login (Allow users to continue playing on an account they have already created)
+- Feature 2 - Register (Allow users to create a new account that stores their game data)
+- Feature 3 - Leaderboard (Allow users to view the top 10 players with the highest score, users can view a global leaderboard or choose to see the leaderboard of a specific country)
+- Feature 4 - About Us (Allow users to read an overview of the game such as the benefits of playing the game)
+- Feature 5 - Log Out (Allow users to log out of their account if they want to)
+- Feature 6 - Play (Allow users to play the game)
+- Feature 7 - Key Binds (Allow users to move the snake using the arrow keys, use power ups such as banana (Q) and orange (E), pause/unpause the game (P))
+- Feature 8 - Legend (Allow users to read a quick overview of what each icon means and a little more information about the game)
+- Feature 9 - Background Music (Helps to immerse users into the game)
+- Feature 10 - Sound Effects (Helps to immerse users into the game)
+- Feature 11 - Visual Effects (Helps to immerse users into the game)
 
 # Technologies Used
-
+- HTML
+- CSS
+- JavaScript
+- JQuery
+- JSON
+- AJAX
+- RestDB API
+- Restcountries API
+- Visual Studio Code
 
 # Testing
 
