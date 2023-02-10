@@ -1,4 +1,8 @@
 # ID_Assignment2: Guo Heng(S10223608) & Jun Xiong(S10222060) P03
+
+# Github Link
+https://github.com/rurururun/ID_Assignment2
+
 # Project Name: Snake & Hunter
 This project is a redone snake game made from html css and js. In the game, you will be able to control your snake on a 31x31 board with the goal of gaining the most points which will be featured on the leaderboard. There will be various fruits that have different capabilities to consume with the snake, each affecting the game uniquely. There will also be a hunter present on the board that will kill your snake upon contact that moves in a straight line on the black line visible on the board. When the game ends, your score will be tabulated based on the number of fruits you have consumed. Will you have what it takes to get the top rank on the leaderboard?
 
