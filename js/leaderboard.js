@@ -37,6 +37,10 @@ fetch(url)
                 options.item(b).addEventListener('click', () => {
                     selected.innerHTML = options.item(b).innerHTML;
                     if (selected.innerHTML == "Global"){
+                        document.querySelector(".flex-container table tbody").remove();
+                        let newE = document.createElement("tbody");
+                        newE.classList.add("userRow");
+                        document.querySelector(".flex-container table"),append(newE);
                         for(let i = 0; i<users.length;i++){
                             if(localStorage.getItem("Username" + i)!=null && i<10){
                                 //Creates rows for data
