@@ -212,7 +212,7 @@ button:hover{
 @media only screen and (min-width: 1441px) and (max-width:2000px) {
     .form{
         border-width: 20px;
-        font-size: 30px;
+        font-size: 20px;
         padding: 80px;
         padding-left: 100px;
         padding-right: 100px;
@@ -227,7 +227,6 @@ button:hover{
         width: 300px;
         height: 55px;
         border-width: 3px;
-
     }
     #country{
         width: 300px;
@@ -281,7 +280,7 @@ button:hover{
     button{
         font-size: 80px;
     }
-    
+
     .buttons> input{
         font-size: 80px;
     }
