@@ -4,18 +4,21 @@ This project is a redone snake game made from html css and js. In the game, you 
 
 # Design Process
 This game was designed aiming to be an interesting spin off of the typical snake game where there are now various fruits that give special powers for a set amount of time. It can be used by people who want more variety from the original snake game made in 1976 which is 47 years ago.
+
 # User Stories
 As a user, I want to be able to make an account so that I am able to keep track of the high scores to monitor my skill level.
 As a user, I want to be able to move my snake around so that I am able to eat the fruits around.
 As a user, I want to be able to compare my high score with others so that I know how I fare amongst others who also play the game.
 As a user, I want to be able to have powerups in the game so that I have a higher chance of success in the game.
 As a user, I want to be able to have music playing in the background so that I can relax while playing the game.
+
 # Features
+
 
 # Technologies Used
 
-# Testing
 
+# Testing
 
 
 # Credits
