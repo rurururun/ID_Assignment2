@@ -85,6 +85,15 @@ ii. Users have to either log back in or sign up to get back to the main menu.
 i. There is music that can be heard in every page.
 ii. Soothing music can be heard in every page other than the game page. For the game page, an upbeat song can be heard.
 
+8. Dimensions
+The general dimensions for the website includes:
+390 x 844
+768 x 1024
+1024 x 768
+1440 x 900
+2560 x 1440
+But other dimensions also work as well as the site is responsive. The pages will look the same in all dimensions
+
 # Credits
 Acknowledgements:
 Snake Game: https://youtu.be/QTcIXok9wNY
