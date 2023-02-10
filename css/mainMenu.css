@@ -93,26 +93,26 @@ body{
 
 @media only screen and (min-width:769px) and (max-width:1024px){
     .menu h1{
-        font-size: 85px;
+        font-size: 60px;
     }
     .menu{
         padding: 30px;
     }
 
     .menu-buttons > button{
-        font-size: 20px;
+        font-size: 25px;
         width: 300px;
     }
 }
 
 @media only screen and (min-width:1025px) and (max-width:1440px){
     .menu h1{
-        font-size: 95px;
+        font-size: 80px;
     }
 }
 
 @media only screen and (min-width:1441px) and (max-width:2560px){
     .menu h1{
-        font-size: 145px;
+        font-size: 105px;
     }
 }

@@ -18,11 +18,13 @@ body{
     width: auto;
     height: auto;
     flex-direction: column;
-    background-color: lightcyan;
-    border: solid lightskyblue;
+    background-color: #63c132;
+    border: solid #bb8141;
     border-width: 10px;
     padding: 20px;
     border-radius: 20px;
+    font-family: "Audiowide", sans-serif;
+
 }
 
 p{
@@ -30,15 +32,17 @@ p{
 }
 
 #submit{
-    background-color: lightblue;
-    border-color: lightskyblue;
+    background-color: #8fd869;
+    border-color: #bb8141;
     border-width: 10px;
     border-radius: 10px;
 }
 
 #submit:hover{
-    background-color: blue;
+    background-color: #bb8141;
+    border-color: #8fd869;
     color: white;
+    text-shadow: 0 0 4px black;
 }
 
 .dropdown{
@@ -69,3 +73,148 @@ p{
     background-color: gray;
 }
 
+button{
+    background-color: #8fd869;
+    border-color: #bb8141;
+    border-width: 10px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #bb8141;
+    border-color: #8fd869;
+    color: white;
+    text-shadow: 0 0 4px black;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+@media(max-width:768px){
+    .form{
+        font-size: 25px;
+    }
+
+    button{
+        font-size: 20px;
+    }
+    .buttons> input{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width:1024px) {
+    .form{
+        font-size: 35px;
+        padding: 80px;
+    }
+
+    #username{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    #password{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    #country{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    .dropdown{
+        width: 175px;
+    }
+
+    button{
+        font-size: 25px;
+    }
+    .buttons> input{
+        font-size: 25px;
+    }
+    
+}
+@media only screen and (min-width: 1025px) and (max-width:1440px) {
+    .form{
+        font-size: 35px;
+        padding: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #username{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    #password{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    #country{
+        width: 200px;
+        height: 25px;
+        border-width: 2px;
+
+    }
+    .dropdown{
+        width: 175px;
+    }
+
+    button{
+        font-size: 25px;
+    }
+    .buttons> input{
+        font-size: 25px;
+    }
+    
+}
+
+@media only screen and (min-width: 1441px) and (max-width:2560px) {
+    .form{
+        border-width: 20px;
+        font-size: 75px;
+        padding: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #username{
+        width: 400px;
+        height: 55px;
+        border-width: 3px;
+    }
+    #password{
+        width: 400px;
+        height: 55px;
+        border-width: 3px;
+
+    }
+    #country{
+        width: 400px;
+        height: 55px;
+        border-width: 3px;
+
+    }
+    .dropdown{
+        width: 175px;
+    }
+
+    button{
+        font-size: 60px;
+    }
+    .buttons> input{
+        font-size: 60px;
+    }
+    
+}
