@@ -1,4 +1,6 @@
 let url = "https://restcountries.com/v3.1/all";
+const APIKEY = "63d372573bc6b255ed0c4352";
+let users = [];
 
 fetch(url)
     .then(response => response.json())
@@ -29,12 +31,88 @@ fetch(url)
                 else{
                     menu.classList.add("menu-open");
                 }
-                console.log("test")
             });
 
             for (let b = 0; b < options.length; b++){
                 options.item(b).addEventListener('click', () => {
                     selected.innerHTML = options.item(b).innerHTML;
+                    if (selected.innerHTML == "Global"){
+                        for(let i = 0; i<users.length;i++){
+                            if(localStorage.getItem("Username" + i)!=null && i<10){
+                                //Creates rows for data
+                                let newRow = document.createElement("tr");
+                                newRow.setAttribute("id","row" + i);
+                                document.querySelector(".userRow").append(newRow);
+                                //Displays ranks from 1-10
+                                let newElement = document.createElement("td"); 
+                                newElement.innerHTML = i + 1;
+                                newElement.classList.add("rank")
+                                document.querySelector("#row"+ i).append(newElement);
+                                //Displays data 
+                                newElement = document.createElement("td");
+                                newElement.innerHTML = `<img src="`+ localStorage.getItem("Countryflag" + i).split('"')[1] + `" style = "width: 50px; height:25px"> ` + localStorage.getItem("Username" + i).split('"')[1];
+                                newElement.classList.add("name")
+                                document.querySelector("#row"+ i).append(newElement);
+                                newElement = document.createElement("td");
+                                newElement.innerHTML= localStorage.getItem("Score" + i);
+                                newElement.classList.add("score")
+                                document.querySelector("#row"+ i).append(newElement);
+                            }
+                        }
+                    }
+                    else{
+                        let filter = selected.innerHTML.split(">")[1];
+                        let selectedCountry;
+                        for (let c = 1; c < filter.length; c++){
+                            selectedCountry += filter[c];
+                        }
+                        let displayedUsers = [];
+                        let c = 0;
+                        while (localStorage.getItem("Username" + c) != null){
+                            if (localStorage.getItem("Country" + c) == selectedCountry && displayedUsers.length < 10){
+                                let displayUser = {
+                                    "username": localStorage.getItem("Username" + c).split('"')[1],
+                                    "flag": localStorage.getItem("Countryflag" + c).split('"')[1],
+                                    "score": parseInt(localStorage.getItem("Score" + c))
+                                }
+                                displayedUsers.push(displayUser);
+                            }
+                            c++;
+                        }
+                        document.querySelector(".flex-container table").remove();
+                        let newElement = document.createElement("table");
+                        document.querySelector(".flex-container").append(newElement);
+                        newElement = document.createElement("thead");
+                        newElement.innerHTML = `
+                            <tr class="header">
+                                <th class="rank">Rank</th>
+                                <th class="name">Name</th>
+                                <th class="score">Score</th>
+                            </tr>
+                        `
+                        document.querySelector(".flex-container table").append(newElement);
+                        newElement = document.createElement("tbody");
+                        newElement.classList.add("userRow");
+                        document.querySelector(".flex-container table").append(newElement);
+                        for (let i = 1; i <= 10; i++){
+                            newElement = document.createElement("tr");
+                            newElement.setAttribute("id", "row" + i);
+                            document.querySelector(".userRow").append(newElement);
+                            newElement = document.createElement("td");
+                            newElement.classList.add("rank");
+                            newElement.innerHTML = i;
+                            document.querySelector("#row" + i).append(newElement);
+                            newElement = document.createElement("td");
+                            newElement.classList.add("name");
+                            newElement.innerHTML = `<img src="` + displayedUsers[i - 1].flag + `" style="width: 50px; height:25px"> ` + displayedUsers[i - 1].username;
+                            document.querySelector("#row" + i).append(newElement);
+                            newElement = document.createElement("td");
+                            newElement.classList.add("score");
+                            newElement.innerHTML = displayedUsers[i - 1].score;
+                            document.querySelector("#row" + i).append(newElement);
+                        }
+                    }
+
                     select.classList.remove("select-clicked");
                     menu.classList.remove("menu-open");
 
@@ -48,14 +126,10 @@ fetch(url)
         }
 
     });
+
 function mainMenu(){
     window.location = "mainMenu.html";
 }
-
-// const APIKEY = "63d372573bc6b255ed0c4352";
-// let users = [];
-// let scores = [];
-// let scoreInDescOrder = [];
 
 // // [STEP 5]: Create AJAX settings
 // let settings = {
@@ -102,6 +176,7 @@ function mainMenu(){
 //         }
 //     }
 // });
+
 var audio = new Audio("audio/10. Boundless Slumber.wav");
 audio.volume = 0.4;
 audio.loop = true;
