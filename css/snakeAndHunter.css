@@ -702,12 +702,24 @@ body{
     }
 }
 
+.snake-head-boost{
+    background-color: #ece75f;
+}
+
 .snake-head{
     background-color: #d7a1f9;
 }
 
+.snake-boost{
+    background-color: #e5de00;
+}
+
 .snake{
     background-color: purple;
+}
+
+.snake-stripe-boost{
+    background-color: #e6cc00;
 }
 
 .snake-stripe{
@@ -738,6 +750,11 @@ body{
 
 .hunter{
     background-color: #82eefd;
+    border: .25vmin solid #0a1172;
+}
+
+.hunter-debuff{
+    background-color: orange;
     border: .25vmin solid #0a1172;
 }
 

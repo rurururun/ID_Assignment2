@@ -1,3 +1,5 @@
+import { orangeUsed } from "./orange.js";
+
 let hunter = {
     x: 16,
     y: 1
@@ -60,23 +62,44 @@ export function updateHunter(){
 }
 
 export function drawHunter(gameBoard){
-    // make a div for the hunter
-    const hunterBody = document.createElement("div");
+    if (orangeUsed){
+        // make a div for the hunter
+        const hunterBody = document.createElement("div");
 
-    // assign x and y position to the hunter
-    hunterBody.style.gridRowStart = hunter.y;
-    hunterBody.style.gridColumnStart = hunter.x;
+        // assign x and y position to the hunter
+        hunterBody.style.gridRowStart = hunter.y;
+        hunterBody.style.gridColumnStart = hunter.x;
 
-    // assign a class to the hunter for css
-    hunterBody.classList.add('hunter');
+        // assign a class to the hunter for css
+        hunterBody.classList.add('hunter-debuff');
 
-    hunterBody.style.borderTopRightRadius = "20px";
-    hunterBody.style.borderTopLeftRadius = "20px";
-    hunterBody.style.borderBottomLeftRadius = "20px";
-    hunterBody.style.borderBottomRightRadius = "20px";
+        hunterBody.style.borderTopRightRadius = "20px";
+        hunterBody.style.borderTopLeftRadius = "20px";
+        hunterBody.style.borderBottomLeftRadius = "20px";
+        hunterBody.style.borderBottomRightRadius = "20px";
 
-    // append the hunter into the game board for it to be shown
-    gameBoard.appendChild(hunterBody);
+        // append the hunter into the game board for it to be shown
+        gameBoard.appendChild(hunterBody);
+    }
+    else{
+        // make a div for the hunter
+        const hunterBody = document.createElement("div");
+
+        // assign x and y position to the hunter
+        hunterBody.style.gridRowStart = hunter.y;
+        hunterBody.style.gridColumnStart = hunter.x;
+
+        // assign a class to the hunter for css
+        hunterBody.classList.add('hunter');
+
+        hunterBody.style.borderTopRightRadius = "20px";
+        hunterBody.style.borderTopLeftRadius = "20px";
+        hunterBody.style.borderBottomLeftRadius = "20px";
+        hunterBody.style.borderBottomRightRadius = "20px";
+
+        // append the hunter into the game board for it to be shown
+        gameBoard.appendChild(hunterBody);
+    }
 }
 
 export function getHunter(){

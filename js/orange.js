@@ -2,7 +2,7 @@ import { onFood, onSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
 
 let orange = null;
-let orangeUsed = false;
+export let orangeUsed = false;
 
 export function updateOrange(){
     if (orange != null){
@@ -47,6 +47,8 @@ export function useOrange(amount){
         switch(e.key){
             case "e":
                 if (amount > 0 && !orangeUsed){
+                    var audio = new Audio("audio/Use Orange.mp3");
+                    audio.play();
                     orangeUsed = true;
                     break;
                 }

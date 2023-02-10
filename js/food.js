@@ -1,5 +1,6 @@
 import { onFood, onSnake, expandSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
+import { hunterSpeed, changeHunterSpeed } from "./hunter.js";
 
 export let food = getRandomFoodPosition();
 
@@ -11,6 +12,7 @@ export function updateFood(){
     if (onFood(food)){
         var audio = new Audio("audio/Bite Sound Effect.mp3");
         audio.play();
+
         // increase the value of the newSegments variable in snake.js
         expandSnake(eat);
 
@@ -19,6 +21,10 @@ export function updateFood(){
 
         // increase score by 1
         score += 1;
+
+        if (score % 10 == 0){
+            changeHunterSpeed(hunterSpeed + (hunterSpeed * 0.1));
+        }
     }
 }
 

@@ -2,7 +2,7 @@ import { onFood, onSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
 
 let banana = null;
-let bananaUsed = false;
+export let bananaUsed = false;
 
 export function updateBanana(){
     if (banana != null){
@@ -47,6 +47,8 @@ export function useBanana(amount){
         switch(e.key){
             case "q":
                 if (amount > 0 && !bananaUsed){
+                    var audio = new Audio("audio/Use Banana.mp3");
+                    audio.play();
                     bananaUsed = true;
                     break;
                 }

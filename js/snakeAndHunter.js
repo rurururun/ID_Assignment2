@@ -1,4 +1,4 @@
-import { updateSnake, drawSnake, snakeIntersection, onSnake } from "./snake.js";
+import { updateSnake, drawSnake, snakeIntersection, onSnake, getSnakeHead } from "./snake.js";
 import { updateFood, drawFood, score, food } from "./food.js";
 import { updateHunter, drawHunter, getHunter, hunterSpeed, changeHunterSpeed } from "./hunter.js";
 import { getInputDirection } from "./input.js";
@@ -27,9 +27,11 @@ let snakeSpeedIncrement = 0;
 let hunterSpeedDecrement = 0;
 
 var audio = new Audio("audio/Joshua McLean - Mountain Trials.mp3");
-audio.volume = 0.1;
+audio.volume = 0.2;
 audio.loop = true;
 audio.play();
+
+var bananaInUseSound;
 
 // Constant Loop (Real-Time) for snake
 function main(currentTime){
@@ -56,7 +58,7 @@ function main(currentTime){
         if (gameOver){
             var deathSound = new Audio("audio/Death Sound Effect.mp3");
             deathSound.play();
-            setTimeout(prompt, 2000);
+            // setTimeout(prompt, 2000);
             // // make a object to store the data to be inserted into the database
             // // adapted from restdb api
             // let jsondata = {
@@ -94,17 +96,17 @@ function main(currentTime){
             // })
 
             // prompt the player the score they got and ask whether they want to play again or stop playing
-            function prompt(){
-                if (confirm(
-                    'You have died. Your score was ' + (score + (bananaCount * 10) + (orangeCount * 10)) +
-                    '. Press ok if you want to play again or press cancel if you want to stop.'
-                )){
-                    window.location = "snakeAndHunter.html";
-                }
-                else{
-                    window.location = "mainMenu.html";
-                }
-            }
+            // function prompt(){
+            //     if (confirm(
+            //         'You have died. Your score was ' + (score + (bananaCount * 10 * (hunterSpeed/10)) + (orangeCount * 10 * (hunterSpeed/10))) +
+            //         '. Press ok if you want to play again or press cancel if you want to stop.'
+            //     )){
+            //         window.location = "snakeAndHunter.html";
+            //     }
+            //     else{
+            //         window.location = "mainMenu.html";
+            //     }
+            // }
             return;
         }
 
@@ -197,18 +199,19 @@ function usingBanana(currentTime){
     if (bananaUsed && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime4) / 1000;
         if (gameWasPaused){
-            if (secondsSinceLastRender < 5 - s2){
+            if (secondsSinceLastRender < 10 - s2){
                 return;
             }
             gameWasPaused = false;
         }
         else{
             s2 = secondsSinceLastRender;
-            if (secondsSinceLastRender < 5){
+            if (secondsSinceLastRender < 10){
                 return;
             }
         }
 
+        bananaInUseSound.pause();
         lastRenderTime4 = currentTime;
         bananaUsed = false;
         snakeSpeed -= snakeSpeedIncrement;
@@ -228,14 +231,14 @@ function usingOrange(currentTime){
     if (orangeUsed && !gamePaused){
         const secondsSinceLastRender = (currentTime - lastRenderTime5) / 1000;
         if (gameWasPaused){
-            if (secondsSinceLastRender < 5 - s3){
+            if (secondsSinceLastRender < 10 - s3){
                 return;
             }
             gameWasPaused = false;
         }
         else{
             s3 = secondsSinceLastRender;
-            if (secondsSinceLastRender < 5){
+            if (secondsSinceLastRender < 10){
                 return;
             }
         }
@@ -274,6 +277,10 @@ function updateGame(){
     }
     useBanana(bananaCount);
     if (getBananaStatus() && !bananaUsed){
+        audio.pause();
+        bananaInUseSound = new Audio("audio/While Banana Active.mp3");
+        bananaInUseSound.volume = 0.5;
+        bananaInUseSound.play();
         bananaCount -= 1;
         snakeSpeedIncrement = snakeSpeed * 0.5;
         snakeSpeed += snakeSpeedIncrement;
@@ -305,9 +312,12 @@ function drawGame(){
 }
 
 function checkDeath(){
-    gameOver = snakeIntersection() || onSnake(getHunter());
+    gameOver = snakeIntersection(gameBoard) || onSnake(getHunter());
     if (gameOver){
         audio.pause();
+        if (bananaUsed){
+            bananaInUseSound.pause();
+        }
     }
 }
 

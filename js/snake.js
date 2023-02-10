@@ -1,5 +1,6 @@
 import { outsideGrid } from "./grid.js";
 import { getInputDirection } from "./input.js";
+import { bananaUsed } from "./banana.js";
 
 const snake = [
     { x: 16, y: 16 }
@@ -89,8 +90,12 @@ export function drawSnake(gameBoard){
             snakeHead.style.gridRowStart = snake[i].y;
             snakeHead.style.gridColumnStart = snake[i].x;
 
-            snakeHead.classList.add("snake-head");
-
+            if (bananaUsed){
+                snakeHead.classList.add("snake-head-boost");
+            }
+            else{
+                snakeHead.classList.add("snake-head");
+            }
             if (snake.length == 1){
                 snakeHead.style.borderTopRightRadius = "20px";
                 snakeHead.style.borderTopLeftRadius = "20px";
@@ -127,11 +132,21 @@ export function drawSnake(gameBoard){
             snakeTail.style.gridRowStart = snake[i].y;
             snakeTail.style.gridColumnStart = snake[i].x;
 
-            if (i % 2 != 0){
-                snakeTail.classList.add("snake-stripe");
+            if (bananaUsed){
+                if (i % 2 != 0){
+                    snakeTail.classList.add("snake-stripe-boost");
+                }
+                else{
+                    snakeTail.classList.add("snake-boost");
+                }
             }
             else{
-                snakeTail.classList.add("snake");
+                if (i % 2 != 0){
+                    snakeTail.classList.add("snake-stripe");
+                }
+                else{
+                    snakeTail.classList.add("snake");
+                }
             }
 
             if (snake.length > 2){
@@ -242,11 +257,21 @@ export function drawSnake(gameBoard){
             snakeBody.style.gridRowStart = snake[i].y;
             snakeBody.style.gridColumnStart = snake[i].x;
 
-            if (i % 2 != 0){
-                snakeBody.classList.add("snake-stripe");
+            if (bananaUsed){
+                if (i % 2 != 0){
+                    snakeBody.classList.add("snake-stripe-boost");
+                }
+                else{
+                    snakeBody.classList.add("snake-boost");
+                }
             }
             else{
-                snakeBody.classList.add("snake");
+                if (i % 2 != 0){
+                    snakeBody.classList.add("snake-stripe");
+                }
+                else{
+                    snakeBody.classList.add("snake");
+                }
             }
 
             for (let a = 0; a < turningpoint.length; a++){
