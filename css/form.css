@@ -209,28 +209,28 @@ button:hover{
     
 }
 
-@media only screen and (min-width: 1441px) and (max-width:2560px) {
+@media only screen and (min-width: 1441px) and (max-width:2000px) {
     .form{
         border-width: 20px;
-        font-size: 75px;
+        font-size: 30px;
         padding: 80px;
         padding-left: 100px;
         padding-right: 100px;
     }
 
     #username{
-        width: 400px;
+        width: 300px;
         height: 55px;
         border-width: 3px;
     }
     #password{
-        width: 400px;
+        width: 300px;
         height: 55px;
         border-width: 3px;
 
     }
     #country{
-        width: 400px;
+        width: 300px;
         height: 55px;
         border-width: 3px;
 
@@ -240,9 +240,49 @@ button:hover{
     }
 
     button{
-        font-size: 60px;
+        font-size: 40px;
     }
     .buttons> input{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (min-width: 2001px) {
+    .form{
+        border-width: 20px;
         font-size: 60px;
+        padding: 80px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #username{
+        width: 500px;
+        height: 55px;
+        border-width: 3px;
+    }
+
+    #password{
+        width: 500px;
+        height: 55px;
+        border-width: 3px;
+    }
+
+    #country{
+        width: 500px;
+        height: 55px;
+        border-width: 3px;
+    }
+
+    .dropdown{
+        width: 450px;
+    }
+
+    button{
+        font-size: 80px;
+    }
+    
+    .buttons> input{
+        font-size: 80px;
     }
 }
