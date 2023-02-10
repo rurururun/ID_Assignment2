@@ -449,6 +449,9 @@ body{
     #legends > div > h1{
         font-size: 30px;
     }
+    #legends > h1{
+        font-size: 30px;
+    }
     #score{
         margin-right: 50px;
     }
@@ -577,14 +580,17 @@ body{
     }
     #legends{
         background-color: #a1cb2e;
-        border: 10px solid #bb8141;
-        border-radius: 10px;
+        border: 20px solid #bb8141;
+        border-radius: 30px;
     }
     #legends > div{
         display: flex;
     }
     #legends > div > h1{
-        font-size: 30px;
+        font-size: 60px;
+    }
+    #legends > h1{
+        font-size: 60px;
     }
     #score{
         margin-right: 70px;
