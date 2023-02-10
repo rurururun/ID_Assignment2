@@ -58,7 +58,6 @@ function main(currentTime){
         if (gameOver){
             var deathSound = new Audio("audio/Death Sound Effect.mp3");
             deathSound.play();
-            setTimeout(prompt, 2000);
             // make a object to store the data to be inserted into the database
             // adapted from restdb api
             let jsondata = {
